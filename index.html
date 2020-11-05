@@ -187,26 +187,6 @@ var i = 0;
       }
    }
 </script>
-    
-    <!--/// Botón para habilitar la edición de mensajes-->
-    
-<script>
-  
-var w=2;
-function EditableContent() { // Modificar para hacerlo más preciso (solo contenido de mensajes y header)
-   if (w == 2)
-      {
-      document.getElementsByTagName("body")[0].setAttribute("contenteditable", "true");
-      w=1;
-      }
-   else
-      {
-      document.getElementsByTagName("body")[0].setAttribute("contenteditable", "false");
-      w=2;
-      }
-   }
-</script>
-
 </head>
 
 <body class="dark" onclick="OcultarAviso(); music.play()">
