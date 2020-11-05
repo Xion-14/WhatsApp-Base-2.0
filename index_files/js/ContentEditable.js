@@ -27,42 +27,42 @@ function EditableContent() {
 
     if(edit == 1) {
         var i = 0;
-        for(i=0;i<=common.length; i++) {
+        for(i=0;i<=common.length-1; i++) {
             common[i].setAttribute("contenteditable", "true");
         }
-        for(i=0;i<=nameM.length; i++) {
+        for(i=0;i<=nameM.length-1; i++) {
             nameM[i].setAttribute("contenteditable", "true");
         }
-        for(i=0;i<=nameT.length; i++) {
+        for(i=0;i<=nameT.length-1; i++) {
             nameT[i].setAttribute("contenteditable", "true");
         }
-        for(i=0;i<=hour.length; i++) {
+        for(i=0;i<=hour.length-1; i++) {
             hour[i].setAttribute("contenteditable", "true");
         }
-        for(i=0;i<=fhLC.length; i++) {
+        for(i=0;i<=fhLC.length-1; i++) {
             fhLC[i].setAttribute("contenteditable", "true");
         }
-        for(i=0;i<=mNot.length; i++) {
+        for(i=0;i<=mNot.length-1; i++) {
             mNot[i].setAttribute("contenteditable", "true");
         }
         edit = 0;
     } else {
-        for(i=0;i<=common.length; i++) {
+        for(i=0;i<=common.length-1; i++) {
             common[i].removeAttribute("contenteditable");
         }
-        for(i=0;i<=nameM.length; i++) {
+        for(i=0;i<=nameM.length-1; i++) {
             nameM[i].removeAttribute("contenteditable");
         }
-        for(i=0;i<=nameT.length; i++) {
+        for(i=0;i<=nameT.length-1; i++) {
             nameT[i].removeAttribute("contenteditable");
         }
-        for(i=0;i<=hour.length; i++) {
+        for(i=0;i<=hour.length-1; i++) {
             hour[i].removeAttribute("contenteditable");
         }
-        for(i=0;i<=fhLC.length; i++) {
+        for(i=0;i<=fhLC.length-1; i++) {
             fhLC[i].removeAttribute("contenteditable");
         }
-        for(i=0;i<=mNot.length; i++) {
+        for(i=0;i<=mNot.length-1; i++) {
             mNot[i].removeAttribute("contenteditable");
         }
         edit = 1;
