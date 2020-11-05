@@ -110,13 +110,16 @@ function DeletePopupLeftBottom() {
 }
 
 function DeletePopupOptions() {
-    span_popup[3].children[0].style.transform = "scale(0)";
-    span_popup[3].children[0].style.opacity =  "0";
-    var i = 0;
-    for(i=0;i<=hover_options_menu.children.length-1;i++) {
-        hover_options_menu.children[i].classList.remove("_39Nmx");
-    }
-    setTimeout(function() {span_popup_options.innerHTML = "";}, 1000);
+  if(span_popup[3].children[0] != undefined) {
+      span_popup[3].children[0].style.transform = "scale(0)";
+      span_popup[3].children[0].style.opacity =  "0";
+    
+      var i = 0;
+      for(i=0;i<=hover_options_menu.children.length-1;i++) {
+          hover_options_menu.children[i].classList.remove("_39Nmx");
+      }
+      setTimeout(function() {span_popup_options.innerHTML = "";}, 1000);
+  }
 }
 
 document.body.addEventListener("click", DeletePopupOptions);
