@@ -1,0 +1,43 @@
+Clase común mayoritaria class="_3Whw5"
+
+# HEADER { class="_1iFv8" } // Padre
+
+  ## Nombre { class="_3ko75 _5h6Y_ _3Whw5" }
+
+  ## Información { class="_3-cMa _3Whw5" }
+
+# CHAT
+
+  ## Fecha { class="_3Whw5" }
+
+  ## Aviso de Mensajes Cifrado { class="_3Whw5" }
+
+  ## Nombre Mensaje { class="zGvn8 color-(nº) _23x7I" } // Padre del Nombre
+
+    (Cuado NO está agregado el Contacto) {
+     ### Número { class="_3UUTc" }
+
+     ### Telefono { class="NRCvf _3ko75 FdF4z _3Whw5" }
+    }
+
+    (Cuado está agregado el Contacto) {
+     ### Nombre { class="FMlAw FdF4z _3Whw5" }
+    }
+
+  ## Mensaje { class="_3Whw5 selectable-text invisible-space copyable-text" } // Padre del Mensaje
+
+     ### Hora del Mensaje { class="_18lLQ" }
+
+     ### Titulo, Descripción y Dominio de videos de Youtube { class="_3Whw5" }
+
+     ### Mensaje NO Leido { class="iBZ7z" }
+
+# FECHA/HORA Listas de Chat { class="m61XR" }
+
+
+//Editar directamente desde javascript
+# POPUP LeftBottom { class="_11dpe" } // Padre
+
+  ## Mensaje Popup { padre[0] }
+
+  ## Mensaje Popu Amarillo { class="QTDNn" }
