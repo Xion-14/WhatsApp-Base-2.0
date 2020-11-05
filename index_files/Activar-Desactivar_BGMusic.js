@@ -25,7 +25,8 @@ if(u === 0) { for( j = 0; j <= icon.length - 1; j++ ) {
 }  
 }
 
-var music_index = "index_files/Sonic Unleashed - Main Theme.mp3";
+// Variable que modifica la musica que suena al cambiar de chat
+var music_index;
 
 function ChangeBGMChat(music_index) {
 
