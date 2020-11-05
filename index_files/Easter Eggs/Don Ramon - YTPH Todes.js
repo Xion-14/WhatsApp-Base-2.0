@@ -3,7 +3,7 @@
 function myDonRamon() {
  if(buscador.innerText == "todes" || buscador.innerText == "TODES" || buscador.innerText == "Todes") {
     easter_egg.src = "index_files/Easter Eggs/Don Ramon - YTPH Todes.mp4";
-    StartEasterEgg(); 
+    StartEasterEgg();
     EndEasterEgg();
  }
 }
