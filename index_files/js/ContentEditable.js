@@ -1,6 +1,10 @@
 // Hacer el contenido necesario editable con el Botón del Lapiz
 
 // Variable que controla cuando se está en modo edición
+
+// Se han comentado la clase "m61XR" en los iconos de la lista de chats al no aportar nada
+// y al dificultar el uso del modo edición para el icono de "mensajes sin leer" de un chat
+
 var edit = 1;
 
 function EditableContent() {
@@ -25,6 +29,9 @@ function EditableContent() {
     // Mensaje NO Leido
     var mNot = document.getElementsByClassName("iBZ7z");
 
+    // Icono de mensajes sin leer de un chat
+    var iconM = document.getElementsByClassName("_31gEB");
+
     if(edit == 1) {
         var i = 0;
         for(i=0;i<=common.length-1; i++) {
@@ -45,6 +52,9 @@ function EditableContent() {
         for(i=0;i<=mNot.length-1; i++) {
             mNot[i].setAttribute("contenteditable", "true");
         }
+        for(i=0;i<=mNot.length-1; i++) {
+            iconM[i].setAttribute("contenteditable", "true");
+        }
         edit = 0;
     } else {
         for(i=0;i<=common.length-1; i++) {
@@ -64,6 +74,9 @@ function EditableContent() {
         }
         for(i=0;i<=mNot.length-1; i++) {
             mNot[i].removeAttribute("contenteditable");
+        }
+        for(i=0;i<=mNot.length-1; i++) {
+            iconM[i].removeAttribute("contenteditable");
         }
         edit = 1;
     }
