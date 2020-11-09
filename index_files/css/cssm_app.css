@@ -23,7 +23,7 @@
 }
 
 img {
-    draggable: false;
+    -webkit-user-drag: none
 }
 
 #aviso {

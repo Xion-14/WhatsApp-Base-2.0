@@ -8,7 +8,7 @@ var i = 0;
 	}
 }
 
-IMGDraggableFalse();
+//IMGDraggableFalse();
 
 // Eliminar atributo
 function IMGDraggableFalseRemove() {
