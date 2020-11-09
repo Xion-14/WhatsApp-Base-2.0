@@ -5,9 +5,11 @@
 }
 
 .oculto {
+    display: none !important;
 }
 
 .expuesto {
+    display: ;
 }
 
 .chat {
