@@ -456,17 +456,21 @@ html[dir=ltr] .h70RQ:after,html[dir=rtl] .h70RQ:after {
     left: 0
 }
 
+/* Comentado para hacer que el footer se vea en cualquier resolución
 @media screen and (max-width: 648px) {
     .h70RQ {
         min-width:648px
     }
 }
+*/
 
+/* Comentado para hacer que el footer se vea en cualquier resolución
 @media screen and (max-height: 500px) {
     .h70RQ {
         min-height:500px
     }
 }
+*/
 
 @media screen and (min-width: 1441px) {
     .app-wrapper-web .h70RQ {
