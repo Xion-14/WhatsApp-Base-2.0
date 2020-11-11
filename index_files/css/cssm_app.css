@@ -42,6 +42,24 @@ img {
     margin: auto;
 }
 
+/* Ocultar la colita de los mensajes al no estar la clase
+'_1dvTe' que redondea la esquina superior izquierda de los mensajes */
+[data-icon="tail"] {
+    display: none !important;
+}
+
+._1dvTE [data-icon="tail"] {
+    display: block !important;
+}
+
+
+/* Clase que reduce el margen inferior que separa los mensajes */
+._28DtS {
+    
+}
+
+/**********************************/
+
 .closed {
     transform: scale(0);
     opacity: 0;
