@@ -67,8 +67,8 @@ function MandarMensaje() {
          footerValue = footerInput.innerText;
          var footerPH = document.getElementsByClassName("_2FbwG")[chat_index + 1]; // El placeholder del buscador de la lista de chats tambien tiene esta clase por eso el +1 para saltarlo
          if(footerValue != "") {
-            footerPH.style.visibility = "hidden";
-         } else {footerPH.style.visibility = "visible"}
+            footerPH.style.display = "none";
+         } else {footerPH.style.display = ""}
 
     });
 }
