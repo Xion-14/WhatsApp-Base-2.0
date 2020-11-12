@@ -64,7 +64,8 @@ function DeletePopup() {
 
 
 
-// Control del hover del PopupOptions del click derecho
+// Control del hover del PopupOptions del click derecho con js (un mero reto para aprender)
+/*
 function OnmouseCheck(index_options_menu) {
     var i = 0;
     for(i=0;i<=hover_options_menu.children.length-1;i++) {
@@ -76,17 +77,20 @@ function OnmouseCheck(index_options_menu) {
             }} );}
     }
 }
+*/
 
 function PopupOptions() {
-    document.body.addEventListener("mouseover", OnmouseCheck);
+    /*document.body.addEventListener("mouseover", OnmouseCheck);*/ // Efecto 'hover' con js
     span_popup[3].innerHTML = popup_options;
     span_popup[3].children[0].style.top = y + "px";
     span_popup[3].children[0].style.left = x + -span_popup[3].children[0].offsetWidth + "px";
     hover_options_menu = document.getElementsByClassName("I4jbF")[0];
+/*
     var i = 0;
-    for(i=0;i<=hover_options_menu.children.length-1;i++) { // Añade el efecto hover
+    for(i=0;i<=hover_options_menu.children.length-1;i++) { // Añade el evento para activar el hover
         hover_options_menu.children[i].setAttribute("onmouseover", "OnmouseCheck("+i+")");
     }
+*/
 }
 
 function DeletePopupOptions() {

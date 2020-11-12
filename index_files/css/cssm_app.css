@@ -6545,6 +6545,11 @@ html[dir] ._36Osw._39Nmx {
     background-color: var(--dropdown-background-hover)
 }
 
+/* Hover del PopupOptions */
+._36Osw:hover {
+    background-color: var(--dropdown-background-hover)
+}
+
 .n-CQr {
     display: block;
     box-sizing: border-box;
