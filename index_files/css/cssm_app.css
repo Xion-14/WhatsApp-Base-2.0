@@ -43,20 +43,26 @@ img {
 }
 
 /* Ocultar la colita de los mensajes al no estar la clase
-'_1dvTe' que redondea la esquina superior izquierda de los mensajes */
+'_1dvTe' que quita el redondeo de la esquina superior izquierda de los mensajes */
 [data-icon="tail"] {
     display: none !important;
 }
 
+/* Mostrar la colita cuando se pone la clase '_1dvTe' que quita el borde izquierdo
+de los mensajes */
 ._1dvTE [data-icon="tail"] {
     display: block !important;
 }
 
 
 /* Clase que reduce el margen inferior que separa los mensajes */
-._28DtS {
-    
-}
+._28DtS {}
+
+/* Clase que resalta el texto de los mensajes sin leer */
+._8Uqu5 {}
+
+/* Clase que se pone en los mensajes enviados para añadir el espacio que falta y se quita en los recibidos porque sobraría espacio */
+._2HWXK {}
 
 /**********************************/
 
