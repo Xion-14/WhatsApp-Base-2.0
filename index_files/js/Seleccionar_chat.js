@@ -34,7 +34,7 @@ var lista_de_chats = document.getElementsByClassName("CIL");
 function AddOnclick(){
 var i = 0;
 
-	for( i = 0; i <= lista_de_chats.length - 1; i++ ) {
+	for(i = 0; i <= lista_de_chats.length - 1; i++) {
 
 	lista_de_chats[i].setAttribute("onclick","ColorChat(); OnclickCheck("+i+")");
 
@@ -49,7 +49,7 @@ setInterval( AddOnclick, 1);
 function ChatFit() {
 	var i = 0;
 
-	for( i = 0; i <= lista_de_chats.length - 1; i++ ) {
+	for(i = 0; i <= lista_de_chats.length - 1; i++) {
 		lista_de_chats[i].style.zIndex = ""+i+"";
 		lista_de_chats[i].style.transform = " translateY("+72*i+"px)";
 		document.getElementsByTagName("div")["Tamaño_del_Chat"].style.height = ""+72*lista_de_chats.length+"px";
@@ -66,13 +66,15 @@ bottom_chat[chat_index].setAttribute("id", "bottom");
 function CambiarChat() {
 var i = 0;
 
-     for( i = 0; i <= chats_name.length - 1; i++ ) {
-     chats_name[i].style.display = "none";
-     bottom_chat[i].removeAttribute("id", "bottom");
-	 if( lista_de_chats[i].childNodes[0].childNodes[0].className == "eJ0yJ _13opk" ) {
-	 chats_name[i].style.display = "";
-	 chat_index = i;
-         bottom_chat[chat_index].setAttribute("id", "bottom");
-	 }
+     for(i = 0; i <= chats_name.length - 1; i++) {
+		 chats_name[i].style.display = "none";
+		 bottom_chat[i].removeAttribute("id", "bottom");
+		 if(lista_de_chats[i].childNodes[0].childNodes[0].className == "eJ0yJ _13opk") {
+			 chats_name[i].style.display = "";
+			 chat_index = i;
+			 bottom_chat[chat_index].setAttribute("id", "bottom");
+		 }
      }
+
+     MandarMensaje(); // Actualizar el popup del contexmenu al cambiar de chat
 }

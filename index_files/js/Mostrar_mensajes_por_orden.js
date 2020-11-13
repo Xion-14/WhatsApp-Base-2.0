@@ -6,7 +6,7 @@ var mensajes_chat = document.getElementsByClassName("mensaje");
 // Mostrar los mensajes ocultos del chat seleccionado 1 detrás de otro
 
   var chats = document.getElementsByClassName("chat");
-  var chatGlobal = chats[0].parentNode;
+  var chatP = document.getElementsByClassName("_3h-WS");
 
   var n1 = -1; // Limitador para mostrar mensajes 1 a 1
 

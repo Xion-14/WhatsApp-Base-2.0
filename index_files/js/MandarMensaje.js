@@ -93,4 +93,10 @@ function MandarMensaje() {
              }
 
     });
+    
+    lista_chats.oncontextmenu = function() {return false}
+    chatP[chat_index].oncontextmenu = function() {return false}
+    chatP[chat_index].addEventListener("contextmenu", PopupOptions);
+    footer.oncontextmenu = function() {return true}
+    footer.addEventListener("contextmenu", DeletePopupOptions);
 }

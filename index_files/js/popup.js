@@ -121,12 +121,9 @@ function DeletePopupOptions() {
   }
 }
 
-chatGlobal.addEventListener("contextmenu", PopupOptions);
 document.body.addEventListener("click", DeletePopupOptions);
 lista_chats.addEventListener("contextmenu", DeletePopupOptions);
 
-chatGlobal.oncontextmenu = function() {return false}
-//lista_chats.oncontextmenu = function() {return false; DeletePopupOptions()}
 
 function PopupLeftBottom() {
     span_popup[0].innerHTML = popup_left_bottom;
