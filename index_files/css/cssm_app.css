@@ -65,6 +65,24 @@ de los mensajes */
 ._2HWXK {}
 
 /**********************************/
+/* Clases importadas para usar el footer actualizado con el clip */
+._1qLcF {
+    display: flex;
+    color: var(--icon)
+}
+
+html[dir=ltr] ._1qLcF {
+    margin-right: -10px;
+}
+
+._295He {
+    display: flex;
+    align-items: center
+}
+
+html[dir=ltr] ._2X5R7 {
+    margin-right: 8px
+}
 
 .closed {
     transform: scale(0);
