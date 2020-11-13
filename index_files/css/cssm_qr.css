@@ -4323,7 +4323,8 @@ html[dir=rtl] .overlay {
     --picker-background-rgb:41.6,47.46667,50.4;
     --popup-panel-background:#131c21;
     --popup-panel-background-rgb:18.6,28.22,33.4;
-    --primary:#d4d5d7;--primary-rgb:212,213,215;
+    --primary:#d4d5d7;
+    --primary-rgb:212,213,215;
     --primary-strong:rgba(241,241,242,0.92);
     --primary-strong-rgb:241,241,242;
     --primary-stronger:rgba(241,241,242,0.88);
@@ -4372,7 +4373,8 @@ html[dir=rtl] .overlay {
     --secondary-lighter-rgb:241,241,242;
     --secondary-stronger:rgba(241,241,242,0.8);
     --secondary-stronger-rgb:241,241,242;
-    --shadow:#000;--shadow-rgb:0,0,0;
+    --shadow:#000;
+    --shadow-rgb:0,0,0;
     --shadow-light:rgba(0,0,0,0.08);
     --shadow-light-rgb:0,0,0;
     --spinner-default:#75787a;
@@ -4419,7 +4421,8 @@ html[dir=rtl] .overlay {
     --toast-background-rgb:9.3,13.74,16.7;
     --tooltip-background:rgba(42,46,48,0.85);
     --tooltip-background-rgb:41.71478,45.64271,47.78522;
-    --typing:#00af9c;--typing-rgb:0,175,156;
+    --typing:#00af9c;
+    --typing-rgb:0,175,156;
     --unread-background:#20272b;
     --unread-background-rgb:31.75,39.01316,43.25;
     --unread-bar-background:rgba(9,14,17,0.6);
@@ -4449,7 +4452,8 @@ html[dir=rtl] .overlay {
     --wallpaper-background:#0d1418;
     --wallpaper-background-rgb:13.12731,19.91681,23.57269;
     --win32-title-primary:#fff;
-    --win32-title-primary-rgb:255,255,255}
+    --win32-title-primary-rgb:255,255,255;
+    }
 
 .dark .color-active-tab-marker {
     color: #00af9c

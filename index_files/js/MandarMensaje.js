@@ -100,3 +100,5 @@ function MandarMensaje() {
     footer.oncontextmenu = function() {return true}
     footer.addEventListener("contextmenu", DeletePopupOptions);
 }
+
+MandarMensaje();
