@@ -64,6 +64,9 @@ de los mensajes */
 /* Clase que se pone en los mensajes enviados para añadir el espacio que falta y se quita en los recibidos porque sobraría espacio */
 ._2HWXK {}
 
+/* Clase que añade el margen necesario a los mensajes de emoticonos grandes */
+._20sYJ {}
+
 /* Clase creada para los paneles de la lista de chats */
 .CIL {}
 
