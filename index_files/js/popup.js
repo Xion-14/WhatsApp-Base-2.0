@@ -17,6 +17,7 @@ var popup_1 = '<div id="popup_1" class="_2fpYo" tabindex="-1"><span class="_2ueS
 var popup_2 = '<div id="popup_2" class="_2fpYo" tabindex="-1"><span class="_2ueSF"><div tabindex="-1"><div data-animate-modal-backdrop="true" class="overlay _3ZqlX _1LkpH copyable-area"><div class="_2Oo_9"><div class="G_MLO" data-animate-modal-popup="true"><div class="_2HE5l" data-animate-modal-body="true"><div class="_3pTi5">¿Quieres eliminar este mensaje?</div><div class="_9a59P"><div class="BDFA1"><div class="_22Sil"><div class="_2XWkx"><div class="_1177f _2SH44"><div class="_1PsNu _3SQxx"></div></div><div class="_1177f"><div class="_1PsNu _2w5bx"></div></div></div></div><div class="_6sJEG">Eliminar archivo de tu teléfono</div></div></div><div class="_9a59P"></div><div class="_2LPYs"><div class="S7_rT _1hQZ_" role="button">Cancelar</div><div class="S7_rT FV2Qy" role="button">Eliminar para mí</div></div></div></div></div></div></div></span></div>';
 var popup_button = document.getElementsByClassName("S7_rT");
 var popup_options = '<div tabindex="-1" class="_2s_eZ" style="transform-origin: right top; transform: scale(1); opacity: 1; transition: 0.5s; transiton-property: transform opacity;"><ul class="I4jbF"><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Info. del mensaje">Info. del mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Responder">Responder</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Reenviar mensaje">Reenviar mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Destacar mensaje">Destacar mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Eliminar mensaje">Eliminar mensaje</div></li></ul></div>';
+var popupCamAccess = '<div class="_2fpYo" tabindex="-1"><div data-animate-modal-backdrop="true" class="overlay _3ZqlX _3Os9f _1LkpH copyable-area" style="opacity: 1;"><div class="_2Oo_9"><div class="G_MLO" data-animate-modal-popup="true" style="opacity: 1; transform: scaleX(1) scaleY(1);"><div class="_2HE5l" data-animate-modal-body="true"><div class="_9a59P"><div class="_2VPUu _2wWwW"><div class="_2ZyPO"><span data-testid="back" data-icon="back" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 4l1.4 1.4L7.8 11H20v2H7.8l5.6 5.6L12 20l-8-8 8-8z"></path></svg></span></div><div class="_1-xld"><span dir="ltr" class="_3Whw5 selectable-text invisible-space copyable-text">Permitir cámara</span></div><div class="_3YtMn"><span dir="ltr" class="_3Whw5 selectable-text invisible-space copyable-text">Para tomar fotos, haz clic en “Permitir” para que WhatsApp pueda acceder a la cámara de tu computadora.</span></div><div class="_3spUw"><div role="button" tabindex="0" class="S7_rT FV2Qy">OK</div></div></div></div></div></div></div></div></div>';
 
 // Botón que aparece al poner el ratón encima de un mensaje
 // var popup_options_button = '<div class="_4tndQ _1vTsI _1ohds" style="opacity: 1;"><div data-js-context-icon="true" class="huqNi" style="transform: translateX(0%);"><span data-testid="down-context" data-icon="down-context" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18" height="18"><path fill="currentColor" d="M3.3 4.6L9 10.3l5.7-5.7 1.6 1.6L9 13.4 1.7 6.2l1.6-1.6z"></path></svg></span></div></div>';
@@ -54,12 +55,22 @@ function AddPopup2() {
     }
 }
 
+function AddPopupCamAccess() {
+    span_popup[1].innerHTML = popupCamAccess;
+    // Desaparece el popup al hacer click en los botones
+    var i = 0;
+    for(i=0;i<=popup_button.length-1;i++) {
+    popup_button[i].addEventListener("click", DeletePopup);
+    }
+}
+
+
 function DeletePopup() {
     var popup_box = document.getElementsByClassName("G_MLO")[0];
     var popup_box_bg = document.getElementsByClassName("overlay")[0];
     popup_box.classList.add("closed");
     popup_box_bg.classList.add("closed");
-    setTimeout(function() {span_popup.innerHTML = "";}, 600);
+    setTimeout(function() {span_popup[1].innerHTML = "";}, 600);
 }
 
 
@@ -112,6 +123,10 @@ function DeletePopupOptions() {
 
 chatGlobal.addEventListener("contextmenu", PopupOptions);
 document.body.addEventListener("click", DeletePopupOptions);
+lista_chats.addEventListener("contextmenu", DeletePopupOptions);
+
+chatGlobal.oncontextmenu = function() {return false}
+//lista_chats.oncontextmenu = function() {return false; DeletePopupOptions()}
 
 function PopupLeftBottom() {
     span_popup[0].innerHTML = popup_left_bottom;

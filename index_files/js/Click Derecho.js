@@ -12,4 +12,4 @@ function ClickDerechoOnOff() {
 		}		
 }
 
-window.oncontextmenu = function(){ return false; }
+//window.oncontextmenu = function(){ return false; }
