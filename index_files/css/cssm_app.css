@@ -22,6 +22,10 @@
     display: none !important;
 }
 
+[hide-response=true] {
+    display: none !important;
+}
+
 img {
     -webkit-user-drag: none
 }
@@ -69,6 +73,9 @@ de los mensajes */
 
 /* Clase creada para los paneles de la lista de chats */
 .CIL {}
+
+/* Clase del botón del footer */
+.footer-button {}
 
 /* Evita que el texto e imágenes de entrada tenga background*/
 ._3FRCZ.copyable-text.selectable-text img {background: transparent !important;}
