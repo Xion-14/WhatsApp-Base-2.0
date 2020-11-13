@@ -29,7 +29,7 @@ var j = 0;
 
 // Añadir funciones "onclick" a todos los chats del panel continuamente
 
-var lista_de_chats = document.getElementsByClassName("_210SC");
+var lista_de_chats = document.getElementsByClassName("CIL");
 
 function AddOnclick(){
 var i = 0;
@@ -47,14 +47,13 @@ setInterval( AddOnclick, 1);
 
 
 function ChatFit() {
-var i = 0;
+	var i = 0;
 
-for( i = 0; i <= lista_de_chats.length - 1; i++ ) {
-
-lista_de_chats[i].style.zIndex = " "+i+"";
-lista_de_chats[i].style.transform = " translateY("+72*i+"px)";
-document.getElementsByTagName("div")["Tamaño_del_Chat"].style.height = ""+72*lista_de_chats.length+"px";
-}
+	for( i = 0; i <= lista_de_chats.length - 1; i++ ) {
+		lista_de_chats[i].style.zIndex = ""+i+"";
+		lista_de_chats[i].style.transform = " translateY("+72*i+"px)";
+		document.getElementsByTagName("div")["Tamaño_del_Chat"].style.height = ""+72*lista_de_chats.length+"px";
+	}
 }
 setInterval( ChatFit, 1);
 

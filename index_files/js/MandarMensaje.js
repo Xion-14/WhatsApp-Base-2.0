@@ -6,7 +6,7 @@ function MandarMensaje() {
     
     footer = document.getElementsByTagName('footer')[chat_index];
     footerInput = footer.children[0].children[1].children[0].children[1];
-    footerValue = footerInput.innerText;
+    footerValue = footerInput.innerHTML;
 
     function nuevoMensaje() {
 
@@ -68,7 +68,7 @@ function MandarMensaje() {
                }
 
          // Ocultar placeholder cuando haya texto en el footer
-         footerValue = footerInput.innerText;
+         footerValue = footerInput.innerHTML;
          var footerPH = document.getElementsByClassName("_2FbwG")[chat_index + 1]; // El placeholder del buscador de la lista de chats tambien tiene esta clase por eso el +1 para saltarlo
          if(footerValue != "") {
             footerPH.style.display = "none";

@@ -64,22 +64,32 @@ de los mensajes */
 /* Clase que se pone en los mensajes enviados para añadir el espacio que falta y se quita en los recibidos porque sobraría espacio */
 ._2HWXK {}
 
+/* Clase creada para los paneles de la lista de chats */
+.CIL {}
+
+/* Evita que el texto e imágenes de entrada tenga background*/
+._3FRCZ.copyable-text.selectable-text img {background: transparent !important;}
+._3FRCZ.copyable-text.selectable-text span {background: transparent !important;}
+
+/* Evita que el texto e imágenes de salida tenga background*/
+._3Whw5.copyable-text.selectable-text img {background: transparent !important;}
+._3Whw5.copyable-text.selectable-text span {background: transparent !important;}
+
+
 /**********************************/
+
 /* Clases importadas para usar el footer actualizado con el clip */
 ._1qLcF {
     display: flex;
     color: var(--icon)
 }
-
 html[dir=ltr] ._1qLcF {
     margin-right: -10px;
 }
-
 ._295He {
     display: flex;
     align-items: center
 }
-
 html[dir=ltr] ._2X5R7 {
     margin-right: 8px
 }
@@ -23279,7 +23289,7 @@ html[dir=rtl] ._1Oy16 {
 
 ._8EvFT {
     position: absolute;
-    top: 49px;
+    bottom: 50px;
     width: 320px;
     height: 444px;
     overflow: hidden;
@@ -23291,11 +23301,11 @@ html[dir] ._8EvFT {
 }
 
 html[dir=ltr] ._8EvFT {
-    right: -17px
+    left: -17px
 }
 
 html[dir=rtl] ._8EvFT {
-    left: -17px
+    right: -17px
 }
 
 ._1dxx- {

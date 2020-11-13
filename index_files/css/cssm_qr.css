@@ -274,7 +274,7 @@ html[dir] :not(.selectable-text)>:not>:not::selection {
 .selectable-text.invisible-space:after,.selectable-text.invisible-space:before {
     display: inline-block;
     width: 0;
-    content: ""
+    /* content: "" */
 }
 
 html[dir] .selectable-text.invisible-space:after::-moz-selection,html[dir] .selectable-text.invisible-space:before::-moz-selection {
@@ -647,6 +647,20 @@ html[dir] .FV2Qy {
 
 html[dir] .FV2Qy:hover {
     background-color: var(--button-primary-background-hover)
+}
+
+._15QUU .I4jbF {
+    display: flex;
+    flex-direction: column-reverse
+}
+
+._15QUU {
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+    box-sizing: initial;
+    width: 51px;
+    pointer-events: all
 }
 
 ._3pp9u.S7_rT,._3pp9u.S7_rT:hover {
@@ -1697,20 +1711,21 @@ html[dir=rtl] ._1Dh2_ ._3s_mK {
 
 ._15QUU {
     position: absolute;
-    top: 0;
+    bottom: 0;
     z-index: 1000;
     box-sizing: initial;
     width: 51px;
-    pointer-events: all
+    pointer-events: all;
 }
-
+/*
 html[dir] ._15QUU {
     padding: 0 10px 30px;
     cursor: default
 }
-
-html[dir=ltr] ._15QUU {
-    right: 2px
+*/
+html[dir] ._15QUU {
+    padding: 0 10px 7px;
+    cursor: default
 }
 
 html[dir=rtl] ._15QUU {
