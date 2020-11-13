@@ -94,6 +94,7 @@ function MandarMensaje() {
 
     });
     
+    // Popup Contextmenu
     lista_chats.oncontextmenu = function() {return false}
     chatP[chat_index].oncontextmenu = function() {return false}
     chatP[chat_index].addEventListener("contextmenu", PopupOptions);
