@@ -11,6 +11,7 @@ function MouseCoords(event) {
 }
 
 Chat.addEventListener("mousemove", MouseCoords);
+document.addEventListener("click", MouseCoords);
 
 // Ventanas popup disponibles
 var popup_1 = '<div id="popup_1" class="_2fpYo" tabindex="-1"><span class="_2ueSF"><div tabindex="-1"><div data-animate-modal-backdrop="true" class="overlay _3ZqlX _1LkpH copyable-area"><div class="_2Oo_9"><div class="G_MLO" data-animate-modal-popup="true"><div class="_2HE5l" data-animate-modal-body="true"><div class="_3pTi5">¿Quieres eliminar este mensaje?</div><div class="_9a59P"><div class="BDFA1"><div class="_22Sil"><div class="_2XWkx"><div class="_1177f _2SH44"><div class="_1PsNu _3SQxx"></div></div><div class="_1177f"><div class="_1PsNu _2w5bx"></div></div></div></div><div class="_6sJEG">Eliminar archivo de tu teléfono</div></div></div><div class="_9a59P"></div><div class="_2LPYs"><div class="_1uIbi"><div class="_416C4"><div class="S7_rT _1hQZ_" role="button">Eliminar para mí</div></div><div class="_416C4"><div class="S7_rT _1hQZ_" role="button">Cancelar</div></div><div class="_416C4"><div class="S7_rT _1hQZ_" role="button">Eliminar para todos</div></div></div></div></div></div></div></div></div></span></div>';
@@ -114,6 +115,7 @@ function DeletePopupOptions() {
       // Animación de salida
       span_popup[3].children[0].style.transform = "scale(0)";
       span_popup[3].children[0].style.opacity =  "0";
+      span_popup[3].oncontextmenu = function() {return false}
     
       var i = 0;
       for(i=0;i<=hover_options_menu.children.length-1;i++) {
@@ -128,8 +130,6 @@ function DeletePopupOptions() {
 }
 
 document.body.addEventListener("click", DeletePopupOptions);
-
-//lista_chats.addEventListener("contextmenu", DeletePopupOptions);
 
 
 function PopupLeftBottom() {

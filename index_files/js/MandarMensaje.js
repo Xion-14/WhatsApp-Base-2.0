@@ -99,7 +99,10 @@ function MandarMensaje() {
 
 
     chatP[chat_index].oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
-    chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
+    chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
+    setTimeout(function() {
+        chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
+    }, 450);
 
     footer.oncontextmenu = function() {return true}
     footer.addEventListener("contextmenu", DeletePopupOptions);
