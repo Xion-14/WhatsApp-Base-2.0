@@ -43,7 +43,7 @@ function AddPopup1() {
     // Desaparece el popup al hacer click en los botones
     var i = 0;
     for(i=0;i<popup_button.length;i++) {
-    popup_button[i].addEventListener("click", DeletePopup);
+        popup_button[i].addEventListener("click", DeletePopup);
     }
 }
 
@@ -52,7 +52,7 @@ function AddPopup2() {
     // Desaparece el popup al hacer click en los botones
     var i = 0;
     for(i=0;i<=popup_button.length-1;i++) {
-    popup_button[i].addEventListener("click", DeletePopup);
+        popup_button[i].addEventListener("click", DeletePopup);
     }
 }
 
@@ -61,7 +61,7 @@ function AddPopupCamAccess() {
     // Desaparece el popup al hacer click en los botones
     var i = 0;
     for(i=0;i<=popup_button.length-1;i++) {
-    popup_button[i].addEventListener("click", DeletePopup);
+        popup_button[i].addEventListener("click", DeletePopup);
     }
 }
 
@@ -71,7 +71,9 @@ function DeletePopup() {
     var popup_box_bg = document.getElementsByClassName("overlay")[0];
     popup_box.classList.add("closed");
     popup_box_bg.classList.add("closed");
-    setTimeout(function() {span_popup[1].innerHTML = "";}, 600);
+    setTimeout(function() {
+        span_popup[1].innerHTML = "";
+    }, 600);
 }
 
 
