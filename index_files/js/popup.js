@@ -95,8 +95,12 @@ function PopupOptions() {
     span_popup[3].innerHTML = popup_options;
     span_popup[3].children[0].style.top = y + "px";
     span_popup[3].children[0].style.left = x + -span_popup[3].children[0].offsetWidth + "px";
-    hover_options_menu = document.getElementsByClassName("I4jbF")[0];
+    chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo creado
+    setTimeout(function() {
+        document.body.addEventListener("contextmenu", DeletePopupOptions); // Habilitar borrado del menu con el click derecho justo después de haberlo creado
+    }, 100);
 /*
+    hover_options_menu = document.getElementsByClassName("I4jbF")[0];
     var i = 0;
     for(i=0;i<=hover_options_menu.children.length-1;i++) { // Añade el evento para activar el hover
         hover_options_menu.children[i].setAttribute("onmouseover", "OnmouseCheck("+i+")");
@@ -105,6 +109,7 @@ function PopupOptions() {
 }
 
 function DeletePopupOptions() {
+  document.body.removeEventListener("contextmenu", DeletePopupOptions);
   if(span_popup[3].children[0] != undefined) {
       // Animación de salida
       span_popup[3].children[0].style.transform = "scale(0)";
@@ -114,15 +119,17 @@ function DeletePopupOptions() {
       for(i=0;i<=hover_options_menu.children.length-1;i++) {
           hover_options_menu.children[i].classList.remove("_39Nmx");
       }
-      chatGlobal.removeEventListener("contextmenu", PopupOptions);
+      
       setTimeout(function() {
-          chatGlobal.addEventListener("contextmenu", PopupOptions);
-          span_popup[3].children[0].innerHTML = "";}, 400); // Retraso para volver a usar el menu
+          chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu del click derecho después de haberlo borrado
+          span_popup[3].children[0].innerHTML = "";  // Retraso para volver a usar el menu
+          }, 450);
   }
 }
 
 document.body.addEventListener("click", DeletePopupOptions);
-lista_chats.addEventListener("contextmenu", DeletePopupOptions);
+
+//lista_chats.addEventListener("contextmenu", DeletePopupOptions);
 
 
 function PopupLeftBottom() {

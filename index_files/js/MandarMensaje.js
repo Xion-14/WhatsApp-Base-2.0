@@ -95,9 +95,12 @@ function MandarMensaje() {
     });
     
     // Popup Contextmenu
-    lista_chats.oncontextmenu = function() {return false}
-    chatP[chat_index].oncontextmenu = function() {return false}
-    chatP[chat_index].addEventListener("contextmenu", PopupOptions);
+    lista_chats.oncontextmenu = function() {return false} // Deshabilitar click derecho en la lista de chats
+
+
+    chatP[chat_index].oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
+    chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
+
     footer.oncontextmenu = function() {return true}
     footer.addEventListener("contextmenu", DeletePopupOptions);
 }
