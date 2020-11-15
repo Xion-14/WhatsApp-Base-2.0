@@ -10,7 +10,7 @@ function MouseCoords(event) {
      y = event.clientY;
 }
 
-Chat.addEventListener("mousemove", MouseCoords);
+document.addEventListener("mousemove", MouseCoords);
 document.addEventListener("click", MouseCoords);
 document.addEventListener("contextmenu", MouseCoords);
 
@@ -21,6 +21,7 @@ var popup_button = document.getElementsByClassName("S7_rT");
 
 //var popup_options_original = '<div tabindex="-1" class="_2s_eZ" style="transform-origin: right top; transform: scale(1); opacity: 1; transition: 0.5s; transiton-property: transform opacity;"><ul class="I4jbF"><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Info. del mensaje">Info. del mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Responder">Responder</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Reenviar mensaje">Reenviar mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Destacar mensaje">Destacar mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Eliminar mensaje">Eliminar mensaje</div></li></ul></div>';
 var popup_options = '<div tabindex="-1" class="_2s_eZ" style="transform-origin: right top; transform: scale(1); opacity: 1; transition: 0.5s; transiton-property: transform opacity;"><ul class="I4jbF"><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Info. del mensaje">Info. del mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Responder">Responder</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Reenviar mensaje">Reenviar mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Destacar mensaje">Destacar mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Eliminar mensaje">Eliminar mensaje</div></li></ul></div>';
+var popup_options2 = '<div tabindex="-1" class="_2s_eZ" style="transform-origin: right top; transform: scale(1); opacity: 1; transition: 0.5s; transiton-property: transform opacity;"><ul class="I4jbF"><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Info. del mensaje">Info. del mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Responder">Responder</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Reenviar mensaje">Reenviar mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Destacar mensaje">Destacar mensaje</div></li><li tabindex="-1" class="_1N-3y eP_pD _36Osw" data-animate-dropdown-item="true" style="opacity: 1;"><div class="Ut_N0 n-CQr _2vuxN" role="button" title="Eliminar mensaje">Eliminar mensaje</div></li></ul></div>';
 
 var popupCamAccess = '<div class="_2fpYo" tabindex="-1"><div data-animate-modal-backdrop="true" class="overlay _3ZqlX _3Os9f _1LkpH copyable-area" style="opacity: 1;"><div class="_2Oo_9"><div class="G_MLO" data-animate-modal-popup="true" style="opacity: 1; transform: scaleX(1) scaleY(1);"><div class="_2HE5l" data-animate-modal-body="true"><div class="_9a59P"><div class="_2VPUu _2wWwW"><div class="_2ZyPO"><span data-testid="back" data-icon="back" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 4l1.4 1.4L7.8 11H20v2H7.8l5.6 5.6L12 20l-8-8 8-8z"></path></svg></span></div><div class="_1-xld"><span dir="ltr" class="_3Whw5 selectable-text invisible-space copyable-text">Permitir cámara</span></div><div class="_3YtMn"><span dir="ltr" class="_3Whw5 selectable-text invisible-space copyable-text">Para tomar fotos, haz clic en “Permitir” para que WhatsApp pueda acceder a la cámara de tu computadora.</span></div><div class="_3spUw"><div role="button" tabindex="0" class="S7_rT FV2Qy">OK</div></div></div></div></div></div></div></div></div>';
 
@@ -97,25 +98,75 @@ function OnmouseCheck(index_options_menu) {
 }
 */
 
+var paneSide = document.getElementById("pane-side");
+
+span_popup[3].oncontextmenu = function() {return false}
+
+chatP[chat_index].oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
+chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
 function PopupOptions() {
+    paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo creado
     /*document.body.addEventListener("mouseover", OnmouseCheck);*/ // Efecto 'hover' con js
     span_popup[3].innerHTML = popup_options;
     
     // Adaptar el menu según la posición del ratón en el chat
+    if(x < (window.innerWidth - chatGlobal.offsetWidth) + span_popup[3].children[0].offsetWidth) { // Si el ratón está más a la izquierda que el ancho del menu
+        span_popup[3].children[0].style.left = x + "px";
+        span_popup[3].children[0].style.transformOrigin = "left top";
+    } else {
+        span_popup[3].children[0].style.left = x + -span_popup[3].children[0].offsetWidth + "px";
+        //span_popup[3].children[0].style.transformOrigin = "right top";
+    }
+    
     if(y > (chatGlobal.offsetHeight - span_popup[3].children[0].offsetHeight)) { // Si el ratón está más bajo que la altura del menu
         span_popup[3].children[0].style.top = y - span_popup[3].children[0].offsetHeight + "px";
+        span_popup[3].children[0].style.transformOrigin = span_popup[3].children[0].style.transformOrigin.replace("top", "bottom");
         
     } else {
         span_popup[3].children[0].style.top = y + "px";
+        //span_popup[3].children[0].style.transformOrigin = "top";
     }
 
-    if(x < (window.innerWidth - chatGlobal.offsetWidth) + span_popup[3].children[0].offsetWidth) { // Si el ratón está más a la izquierda que el ancho del menu
+    chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo creado
+    setTimeout(function() {
+        document.body.addEventListener("contextmenu", DeletePopupOptions); // Habilitar borrado del menu con el click derecho justo después de haberlo creado
+        document.body.addEventListener("click", DeletePopupOptions);
+    }, 100);
+/*
+    hover_options_menu = document.getElementsByClassName("I4jbF")[0];
+    var i = 0;
+    for(i=0;i<=hover_options_menu.children.length-1;i++) { // Añade el evento para activar el hover
+        hover_options_menu.children[i].setAttribute("onmouseover", "OnmouseCheck("+i+")");
+    }
+*/
+}
+
+paneSide.oncontextmenu = function() {return false} // Deshabilitar click derecho en la lista de chats
+paneSide.addEventListener("contextmenu", PopupOptions2); // Habilitar menu popup del click derecho en el chat actual
+function PopupOptions2() {
+    chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo creado
+    /*document.body.addEventListener("mouseover", OnmouseCheck);*/ // Efecto 'hover' con js
+    span_popup[3].innerHTML = popup_options2;
+    
+    // Adaptar el menu según la posición del ratón en el chat
+    if(x < (paneSide.offsetWidth - span_popup[3].children[0].offsetWidth)) { // Si el ratón está más a la izquierda que el ancho del menu
         span_popup[3].children[0].style.left = x + "px";
+        span_popup[3].children[0].style.transformOrigin = "left top";
     } else {
         span_popup[3].children[0].style.left = x + -span_popup[3].children[0].offsetWidth + "px";
+        //span_popup[3].children[0].style.transformOrigin = "right top";
     }
 
-        chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo creado
+    if(y > (paneSide.offsetHeight - span_popup[3].children[0].offsetHeight)) { // Si el ratón está más bajo que la altura del menu
+        span_popup[3].children[0].style.top = y - span_popup[3].children[0].offsetHeight + "px";
+        span_popup[3].children[0].style.transformOrigin = span_popup[3].children[0].style.transformOrigin.replace("top", "bottom");
+        
+    } else {
+        span_popup[3].children[0].style.top = y + "px";
+        //span_popup[3].children[0].style.transformOrigin = "top";
+    }
+
+    paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo creado
     setTimeout(function() {
         document.body.addEventListener("contextmenu", DeletePopupOptions); // Habilitar borrado del menu con el click derecho justo después de haberlo creado
         document.body.addEventListener("click", DeletePopupOptions);
@@ -136,17 +187,17 @@ function DeletePopupOptions() {
       // Animación de salida
       span_popup[3].children[0].style.transform = "scale(0)";
       span_popup[3].children[0].style.opacity =  "0";
-      span_popup[3].oncontextmenu = function() {return false}
-    
+/*
       var i = 0;
       for(i=0;i<=hover_options_menu.children.length-1;i++) {
           hover_options_menu.children[i].classList.remove("_39Nmx");
       }
-      
+*/
       setTimeout(function() {
           chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu del click derecho después de haberlo borrado
-          span_popup[3].children[0].innerHTML = "";  // Retraso para volver a usar el menu
-          }, 450);
+          paneSide.addEventListener("contextmenu", PopupOptions2); // Habilitar menu del click derecho después de haberlo borrado
+          span_popup[3].innerHTML = "";
+      }, 450);  // Retraso para volver a usar el menu
   }
 }
 
