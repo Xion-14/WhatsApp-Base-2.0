@@ -98,6 +98,7 @@ function OnmouseCheck(index_options_menu) {
 }
 */
 
+var POD = 100; // PopupOptionsDelay
 var paneSide = document.getElementById("pane-side");
 
 span_popup[3].oncontextmenu = function() {return false}
@@ -131,7 +132,7 @@ function PopupOptions() {
     setTimeout(function() {
         document.body.addEventListener("contextmenu", DeletePopupOptions); // Habilitar borrado del menu con el click derecho justo después de haberlo creado
         document.body.addEventListener("click", DeletePopupOptions);
-    }, 100);
+    }, POD);
 /*
     hover_options_menu = document.getElementsByClassName("I4jbF")[0];
     var i = 0;
@@ -170,7 +171,7 @@ function PopupOptions2() {
     setTimeout(function() {
         document.body.addEventListener("contextmenu", DeletePopupOptions); // Habilitar borrado del menu con el click derecho justo después de haberlo creado
         document.body.addEventListener("click", DeletePopupOptions);
-    }, 100);
+    }, POD);
 /*
     hover_options_menu = document.getElementsByClassName("I4jbF")[0];
     var i = 0;
@@ -197,7 +198,7 @@ function DeletePopupOptions() {
           chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu del click derecho después de haberlo borrado
           paneSide.addEventListener("contextmenu", PopupOptions2); // Habilitar menu del click derecho después de haberlo borrado
           span_popup[3].innerHTML = "";
-      }, 450);  // Retraso para volver a usar el menu
+      }, 450);  // Retraso para que desaparezca el menu y volver a usarlo
   }
 }
 

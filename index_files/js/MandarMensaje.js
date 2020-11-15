@@ -103,7 +103,7 @@ function MandarMensaje() {
     setTimeout(function() {
         chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
         paneSide.addEventListener("contextmenu", PopupOptions2); // Habilitar menu popup del click derecho en el chat actual
-    }, 450); // Retardo
+    }, POD); // Retardo
 
     footer.oncontextmenu = function() {return true}
     footer.addEventListener("contextmenu", DeletePopupOptions);
