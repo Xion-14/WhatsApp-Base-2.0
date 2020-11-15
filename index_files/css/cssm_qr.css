@@ -1,3 +1,24 @@
+/*Clase que afecta a la barra de la pantalla de carga*/
+._3Z6_Q {
+    position: fixed;
+    top: 50%;
+    width: 360px
+}
+
+html[dir] ._3Z6_Q {
+    padding-top: 120px
+}
+
+html[dir=ltr] ._3Z6_Q {
+    left: 50%;
+    margin-left: -180px
+}
+
+html[dir=rtl] ._3Z6_Q {
+    right: 50%;
+    margin-right: -180px
+}
+
 ._1ZWDD {
     display: block
 }
