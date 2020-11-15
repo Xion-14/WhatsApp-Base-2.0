@@ -1,5 +1,7 @@
 // Cambiar de color el chat seleccionado al hacer click
 
+var chatGlobal = document.getElementById("Chat");
+
 var chats_pannel = document.getElementsByClassName('eJ0yJ');
 var index = -1; // Valor que devuelven los chats del panel al ser clickados y que se usa para determinar cual ha sido clickado
 var bottom_chat = document.getElementsByClassName("bottom");
