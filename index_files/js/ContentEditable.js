@@ -9,6 +9,8 @@ var edit = 1;
 
 function EditableContent() {
     
+    var editButton = document.getElementsByTagName("div")["Editar Texto"];
+
     var common = document.getElementsByClassName("_3Whw5");
     
     /* Nombre de los menajes grupales */
@@ -33,6 +35,8 @@ function EditableContent() {
     var iconM = document.getElementsByClassName("_31gEB");
 
     if(edit == 1) {
+        editButton.classList.remove("/*_3QjfB*/");
+        editButton.classList.add("_3QjfB");
         var i = 0;
         for(i=0;i<=common.length-1; i++) {
             common[i].setAttribute("contenteditable", "true");
@@ -57,6 +61,8 @@ function EditableContent() {
         }
         edit = 0;
     } else {
+        editButton.classList.add("/*_3QjfB*/");
+        editButton.classList.remove("_3QjfB");
         for(i=0;i<=common.length-1; i++) {
             common[i].removeAttribute("contenteditable");
         }

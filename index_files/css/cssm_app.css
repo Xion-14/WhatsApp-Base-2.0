@@ -46,6 +46,11 @@ img {
     margin: auto;
 }
 
+/* Evita que el doble click seleccione texto del placeholder */
+._1JNuk._1qLcF, ._3uMse {
+    user-select: none;
+}
+
 /* Ocultar la colita de los mensajes al no estar la clase
 '_1dvTe' que quita el redondeo de la esquina superior izquierda de los mensajes */
 [data-icon="tail"] {
@@ -23026,11 +23031,14 @@ html[dir] .FIHAk {
     transform: translateZ(0)
 }
 
+/* Eliminar borde de focus (estilo focus forzado por WhatsApp)
 html[dir] .FIHAk:focus {
-    box-shadow: 0 0 0 2px rgba(var(--focus-rgb),.5)
+    box-shadow: 0 0 0 2px rgba(var(--focus-rgb),.5);
 }
+*/
 
-.FIHAk._3QjfB {
+/* Comentado al no ser necesario */
+/*.FIHAk*/._3QjfB {
     color: var(--teal)
 }
 
