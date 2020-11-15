@@ -101,6 +101,7 @@ function PopupOptions() {
     chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo creado
     setTimeout(function() {
         document.body.addEventListener("contextmenu", DeletePopupOptions); // Habilitar borrado del menu con el click derecho justo después de haberlo creado
+        document.body.addEventListener("click", DeletePopupOptions);
     }, 100);
 /*
     hover_options_menu = document.getElementsByClassName("I4jbF")[0];
@@ -113,6 +114,7 @@ function PopupOptions() {
 
 function DeletePopupOptions() {
   document.body.removeEventListener("contextmenu", DeletePopupOptions);
+  document.body.removeEventListener("click", DeletePopupOptions);
   if(span_popup[3].children[0] != undefined) {
       // Animación de salida
       span_popup[3].children[0].style.transform = "scale(0)";
@@ -130,8 +132,6 @@ function DeletePopupOptions() {
           }, 450);
   }
 }
-
-document.body.addEventListener("click", DeletePopupOptions);
 
 
 function PopupLeftBottom() {

@@ -7,17 +7,17 @@ var m_muted = false;
 
 function myBuscador() {
  if(buscador.innerText != "") {
-    buscador_bg_texto.style.display = "none";
- } else { buscador_bg_texto.style.display = ""; }
+    buscador_bg_texto.style.visibility = "hidden";
+ } else { buscador_bg_texto.style.visibility = "visible"; }
 }
 
-buscador.addEventListener("keypress", myBuscador);
+buscador.addEventListener("keydown", myBuscador);
 
 function StartEasterEgg() {
 
     m_muted = false;
     if(music.muted === false) { BGMusic(); } else { m_muted = true; };
-    document.getElementsByTagName("body")[0].setAttribute("onclick", "music.play()");
+    document.body.setAttribute("onclick", "music.play()");
     aviso.style.display = "";
     app.style.display = "none";
     easter_egg.style.display = "";
@@ -29,7 +29,7 @@ function StartEasterEgg() {
 function EndEasterEgg() {
 
   setInterval(function() { if(easter_egg.ended == true) {
-              document.getElementsByTagName("body")[0].setAttribute("onclick", "OcultarAviso(); music.play()");
+              document.body.setAttribute("onclick", "OcultarAviso(); music.play()");
               OcultarAviso();
               if(m_muted === false) { BGMusic(); }; easter_egg.style.display = "none";
               easter_egg.currentTime = 0;
