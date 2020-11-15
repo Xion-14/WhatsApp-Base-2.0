@@ -26,12 +26,16 @@ if(u === 0) { for( j = 0; j <= icon.length - 1; j++ ) {
 }
 
 // Variable que modifica la musica que suena al cambiar de chat
-var music_index;
+var music_index = "index_files/assets/media/Sonic Unleashed - Main Theme.mp3"; // Valor por defecto al empezar del music.src
+var musicPlaying = music_index; // Variable con el proposito de evitar que la música que está sonando se resproduzca desde el principio al hacer click de nuevo sobre su panel de chat correspondiente
 
 function ChangeBGMChat(music_index) {
-
-music.src = music_index;
-music.play();
+  
+    if(musicPlaying != music_index) {
+      musicPlaying = music_index;
+      music.src = music_index;
+      music.play();
+    }
 
 }
 
@@ -41,21 +45,19 @@ ya que no se permite el "autoplay en local.
 */
 
 
-var welcome_text = document.getElementById("welcome_text");
+//var welcome_text = document.getElementById("welcome_text");
 
 function OcultarAviso(){
   
 var aviso = document.getElementById("aviso");
 var app = document.getElementById("app");
 
-  welcome_text.style.display = "none";
   aviso.style.display = "none";
   app.style.display = "";
   
 }
 
 function MostrarAviso(){
-  welcome_text.style.display = "";
   aviso.style.display = "";
   app.style.display = "none";
 }
