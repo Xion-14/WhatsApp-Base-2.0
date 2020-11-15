@@ -1,13 +1,12 @@
 var footer = document.getElementsByTagName('footer')[chat_index];
 var footerInput = footer.children[0].children[1].children[0].children[1];
-var footerValue = footerInput.innerText;
+var footerValue = footerInput.innerHTML;
 var footerPH = document.getElementsByClassName("_2FbwG")[chat_index + 1];
 
 function MandarMensaje() {
     
     footer = document.getElementsByTagName('footer')[chat_index];
     footerInput = footer.children[0].children[1].children[0].children[1];
-    footerValue = footerInput.innerHTML;
 
     function nuevoMensaje() {
 
@@ -54,10 +53,11 @@ function MandarMensaje() {
               // Hacer salto de linea
 
             } else if(event.key == "Enter") {return event.returnValue = false;} // event.preventDefault()
-        };
+    }
 
     // Mandar mensaje al presionar 'Enter' en la entrada de texto
     footerInput.addEventListener("keyup", function(event) {
+        
         if(event.shiftKey) { // Si se presiona 'Shift'
 
             // No mandar mensaje
@@ -67,31 +67,31 @@ function MandarMensaje() {
                     footerInput.innerText = ""; // Vaciar entrada al presionar 'Enter'
                     footerInput.focus(); // Selecciona de nuevo la entrada de texto para poder escribir otra vez al haber pulsado 'Enter'
                }
-    
-    // Mandar mensaje haciendo 'click' en el botón de enviar
-    footerPH = document.getElementsByClassName("_2FbwG")[chat_index + 1]; // El placeholder del buscador de la lista de chats tambien tiene esta clase por eso el +1 para saltarlo
-    var footerButton = document.getElementsByClassName("footer-button")[chat_index];
-    footerButton.onclick = function() {
-        if(footerValue != "") { // Si hay un texto introducido y se hace 'click', ejecuta la functión
-              nuevoMensaje();
-              footerInput.innerText = ""; // Vaciar entrada al hacer 'click' en el botón
-              footerPH.style.visibility = "visible"; // Mostrar 'placeholder'
-              var audioButtton = '<div class="_3TDpK"><span><button class="_2r1fJ"><span data-testid="ptt" data-icon="ptt" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M11.999 14.942c2.001 0 3.531-1.53 3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531S8.469 2.35 8.469 4.35v7.061c0 2.001 1.53 3.531 3.53 3.531zm6.238-3.53c0 3.531-2.942 6.002-6.237 6.002s-6.237-2.471-6.237-6.002H3.761c0 4.001 3.178 7.297 7.061 7.885v3.884h2.354v-3.884c3.884-.588 7.061-3.884 7.061-7.885h-2z"></path></svg></span></button></span></div>';
-              footerButton.innerHTML = audioButtton; // Cambiar botón del 'footer' al de grabar mensaje
-        }
-    }
 
-         // Ocultar placeholder cuando haya texto en el footer y cambiar el icono del botón
-         
-         if(footerInput.innerText != "") {
-            footerPH.style.visibility = "hidden";
-            var sendButton = '<button class="_1U1xa"><span data-testid="send" data-icon="send" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span></button>';
-            footerButton.innerHTML = sendButton; // Cambiar botón del 'footer' al de enviar mensaje
-         } else {
-            footerPH.style.visibility = "visible"
-            var audioButtton = '<div class="_3TDpK"><span><button class="_2r1fJ"><span data-testid="ptt" data-icon="ptt" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M11.999 14.942c2.001 0 3.531-1.53 3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531S8.469 2.35 8.469 4.35v7.061c0 2.001 1.53 3.531 3.53 3.531zm6.238-3.53c0 3.531-2.942 6.002-6.237 6.002s-6.237-2.471-6.237-6.002H3.761c0 4.001 3.178 7.297 7.061 7.885v3.884h2.354v-3.884c3.884-.588 7.061-3.884 7.061-7.885h-2z"></path></svg></span></button></span></div>';
-            footerButton.innerHTML = audioButtton; // Cambiar botón del 'footer' al de grabar mensaje
+        // Mandar mensaje haciendo 'click' en el botón de enviar
+        footerValue = footerInput.innerHTML; // Actualización de la varible necesaria para comprobar el varlor del 'input' en cada tecla que se pulsa y se debe comprobar aquí y no antes, sino al enviar el mensaje el 'placeholder' sigue oculto
+        footerPH = document.getElementsByClassName("_2FbwG")[chat_index + 1]; // El placeholder del buscador de la lista de chats tambien tiene esta clase por eso el +1 para saltarlo
+        var footerButton = document.getElementsByClassName("footer-button")[chat_index];
+        footerButton.onclick = function() {
+            if(footerValue != "") { // Si hay un texto introducido y se hace 'click', ejecuta la functión
+                  nuevoMensaje();
+                  footerInput.innerText = ""; // Vaciar entrada al hacer 'click' en el botón
+                  footerPH.style.visibility = "visible"; // Mostrar 'placeholder'
+                  var audioButtton = '<div class="_3TDpK"><span><button class="_2r1fJ"><span data-testid="ptt" data-icon="ptt" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M11.999 14.942c2.001 0 3.531-1.53 3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531S8.469 2.35 8.469 4.35v7.061c0 2.001 1.53 3.531 3.53 3.531zm6.238-3.53c0 3.531-2.942 6.002-6.237 6.002s-6.237-2.471-6.237-6.002H3.761c0 4.001 3.178 7.297 7.061 7.885v3.884h2.354v-3.884c3.884-.588 7.061-3.884 7.061-7.885h-2z"></path></svg></span></button></span></div>';
+                  footerButton.innerHTML = audioButtton; // Cambiar botón del 'footer' al de grabar mensaje
             }
+        }
+
+             // Ocultar placeholder cuando haya texto en el footer y cambiar el icono del botón
+             if(footerValue != "") {
+                footerPH.style.visibility = "hidden"; // Ocultar 'placeholder'
+                var sendButton = '<button class="_1U1xa"><span data-testid="send" data-icon="send" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span></button>';
+                footerButton.innerHTML = sendButton; // Cambiar botón del 'footer' al de enviar mensaje
+             } else {
+                footerPH.style.visibility = "visible" // Mostrar 'placeholder'
+                var audioButtton = '<div class="_3TDpK"><span><button class="_2r1fJ"><span data-testid="ptt" data-icon="ptt" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M11.999 14.942c2.001 0 3.531-1.53 3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531S8.469 2.35 8.469 4.35v7.061c0 2.001 1.53 3.531 3.53 3.531zm6.238-3.53c0 3.531-2.942 6.002-6.237 6.002s-6.237-2.471-6.237-6.002H3.761c0 4.001 3.178 7.297 7.061 7.885v3.884h2.354v-3.884c3.884-.588 7.061-3.884 7.061-7.885h-2z"></path></svg></span></button></span></div>';
+                footerButton.innerHTML = audioButtton; // Cambiar botón del 'footer' al de grabar mensaje
+                }
 
     });
     
@@ -109,5 +109,3 @@ function MandarMensaje() {
     footer.oncontextmenu = function() {return true}
     footer.addEventListener("contextmenu", DeletePopupOptions);
 }
-
-MandarMensaje();
