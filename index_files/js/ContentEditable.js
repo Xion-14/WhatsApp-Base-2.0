@@ -35,6 +35,8 @@ function EditableContent() {
     var iconM = document.getElementsByClassName("_31gEB");
 
     if(edit == 1) {
+        // Evitar acceder a un 'link' en modo edición
+        onclick = function() {return false}
         editButton.classList.remove("/*_3QjfB*/");
         editButton.classList.add("_3QjfB");
         var i = 0;
@@ -61,6 +63,8 @@ function EditableContent() {
         }
         edit = 0;
     } else {
+        //Reactivar la activación de 'links'
+        onclick = function() {return true}
         editButton.classList.add("/*_3QjfB*/");
         editButton.classList.remove("_3QjfB");
         for(i=0;i<=common.length-1; i++) {
