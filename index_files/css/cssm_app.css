@@ -6652,9 +6652,11 @@ html[dir] ._12VoD img {
     border-radius: 3px
 }
 
+/* Eliminar borde de focus (estilo focus forzado por WhatsApp)
 html[dir] ._12VoD:focus img {
     box-shadow: 0 0 0 2px rgba(var(--blue-light-rgb),.4)
 }
+*/
 
 html[dir=ltr] ._12VoD:first-child {
     margin-right: 12px;
