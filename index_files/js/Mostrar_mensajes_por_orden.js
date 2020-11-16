@@ -37,38 +37,49 @@ function MostrarMensaje() {
 
 }
 
+
 //Detectar si un mensaje está oculto para encender el botón que los muestra
-onclick = function() {
+
+var MO; // Cantidad Mensajes Ocultos
+var MM; // Cantidad Mensajes Expuestos
+var divP = document.getElementsByTagName("div");
+
+function PopupLogic() {MO = 0; MM = 0; // Cantidad de Mensajes ocultos
  buttonMM = document.getElementsByClassName("MM")[chat_index];
- for(var i = 0; i <= chats[chat_index].children.length-1; i++) {
-   if(chats[chat_index].children[i].classList[3] === "oculto" || chats[chat_index].children[i].classList[4] === "oculto") {
-     buttonMM.classList.remove("/*_3QjfB*/");
-     buttonMM.classList.add("_3QjfB");
-      break;
-      
+ for(var i = 2; i <= chats[chat_index].children.length-1; i++) {
+   if(chats[chat_index].children[i].classList[3] == "oculto" || chats[chat_index].children[i].classList[4] == "oculto") {
+     MO++;
    } else {
-     buttonMM.classList.remove("_3QjfB");
-     buttonMM.classList.add("/*_3QjfB*/");
+     MM++;
+   }
+
+   if(MO >= 1) { // Si la cantidad de Mensajes Ocultos es mayor que 1
+      buttonMM.classList.remove("/*_3QjfB*/");
+      buttonMM.classList.add("_3QjfB"); // Poner al botón color verde
+      if(divP["MostrarMensajes()"] != undefined){
+        divP["MostrarMensajes()"].style.display = ""; // Mostrar Botón de "Mostrar Mensajes"
+      }
+     } else { // Si no es 0
+       buttonMM.classList.add("/*_3QjfB*/");
+       buttonMM.classList.remove("_3QjfB"); // Quitar color verde al botón
+       if(divP["MostrarMensajes()"] != undefined){
+        divP["MostrarMensajes()"].style.display = "none"; // Ocultar Botón
+      }
+     }
+
+    if(divP["OcultarMensajes()"] != undefined) {
+      if(MM >= 1) { // Si la cantidad de Mensajes Mostrados es mayor que 1
+       divP["OcultarMensajes()"].style.display = ""; // Mostrar botón de "Ocultar Mensajes"
+     } else {
+       divP["OcultarMensajes()"].style.display = "none"; // Ocultar botón
+       }
      }
  }
 }
 
-
-onmousemove = function() {
- buttonMM = document.getElementsByClassName("MM")[chat_index];
- for(var i = 0; i <= chats[chat_index].children.length-1; i++) {
-   if(chats[chat_index].children[i].classList[3] === "oculto" || chats[chat_index].children[i].classList[4] === "oculto") {
-     buttonMM.classList.remove("/*_3QjfB*/");
-     buttonMM.classList.add("_3QjfB");
-      break;
-      
-   } else {
-     buttonMM.classList.remove("_3QjfB");
-     buttonMM.classList.add("/*_3QjfB*/");
-     }
- }
-}
-
+document.addEventListener("click", PopupLogic);
+document.addEventListener("contextmenu", PopupLogic);
+document.addEventListener("mousemove", PopupLogic);
 
 // Ocultar todos los mensajes del chat seleccionado
 function OcultarMensajes() {
@@ -80,6 +91,19 @@ function OcultarMensajes() {
    if(chats[chat_index].children[i] != undefined) {
       chats[chat_index].children[i].classList.remove("expuesto");
       chats[chat_index].children[i].classList.add("oculto");
+   }
+  }
+}
+// Mostrar todos los mensajes del chat seleccionado
+function MostrarMensajes() {
+  
+  var i = 2;
+  var m1 = mensajes_chat;
+  
+  for ( i = 2 ; i <= m1.length-1 ; i++ ) {
+   if(chats[chat_index].children[i] != undefined) {
+      chats[chat_index].children[i].classList.remove("oculto");
+      chats[chat_index].children[i].classList.add("expuesto");
    }
   }
 }
