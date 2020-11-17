@@ -63,6 +63,19 @@ de los mensajes */
     display: block !important;
 }
 
+/* Videos */
+.mensaje video {
+    width: 525px;
+    height: 300px;
+    margin-bottom: 5px;
+}
+.message-out.video {
+    transform: translate(-195px, 0px);
+}
+.message-in.video {
+
+}
+
 
 /* Clase que reduce el margen inferior que separa los mensajes */
 ._28DtS {}
@@ -6372,7 +6385,7 @@ html[dir] ._3KpsV {
 
 ._3nauV {
     display: flex;
-    flex-flow: row wrap
+    flex-flow: row wrap;
 }
 
 ._3NiSW {
@@ -14914,7 +14927,7 @@ html[dir] ._38cGw {
 }
 
 html[dir=ltr] ._38cGw ._1F528 {
-    padding: 6px 4px 21px 9px
+    padding: 6px 4px 21px 9px;
 }
 
 html[dir=rtl] ._38cGw ._1F528 {
