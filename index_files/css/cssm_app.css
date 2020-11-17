@@ -64,15 +64,15 @@ de los mensajes */
 }
 
 /* Videos */
-.mensaje video {
+.mensaje[video] video {
     width: 525px;
     height: 300px;
     margin-bottom: 5px;
 }
-.message-out.video {
+.message-out[video] {
     transform: translate(-195px, 0px);
 }
-.message-in.video {
+.message-in[video] {
 
 }
 
