@@ -145,9 +145,11 @@ function PopupOptions() {
             //span_popup[3].children[0].style.transformOrigin = "top";
         }
     }, 0);
+    
     chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo creado
     setTimeout(function() {
-        document.body.addEventListener("contextmenu", DeletePopupOptions); // Habilitar borrado del menu con el click derecho justo después de haberlo creado
+        // Habilitar borrado del menu con el click derecho justo después de haberlo creado
+        document.body.addEventListener("contextmenu", DeletePopupOptions);
         document.body.addEventListener("click", DeletePopupOptions);
     }, POD);
 /*
@@ -158,6 +160,56 @@ function PopupOptions() {
     }
 */
 }
+
+function PopupLogic() {
+
+ // Detectar si un mensaje está oculto para encender el botón que los muestra
+ var MO = 0; // Cantidad Mensajes Ocultos
+ var MM = 0; // Cantidad Mensajes Expuestos
+
+ var divP = document.getElementsByTagName("div");
+
+ // Botón que Muestra Mensajes
+ var buttonMM = document.getElementsByClassName("MM")[chat_index];
+
+ for(var i = 2; i <= chats[chat_index].children.length-1; i++) {
+   if(chats[chat_index].children[i].classList[3] == "oculto" || chats[chat_index].children[i].classList[4] == "oculto") {
+     MO++;
+   } else {
+     MM++;
+   }
+
+   if(MO >= 1) { // Si la cantidad de Mensajes Ocultos es mayor que 1
+      buttonMM.classList.remove("/*_3QjfB*/");
+      buttonMM.classList.add("_3QjfB"); // Poner al botón color verde
+      if(divP["MostrarMensajes()"] != undefined){
+        divP["MostrarMensajes()"].style.display = ""; // Mostrar Botón de "Mostrar Mensajes"
+      }
+     } else { // Si no es 0
+       buttonMM.classList.add("/*_3QjfB*/");
+       buttonMM.classList.remove("_3QjfB"); // Quitar color verde al botón
+       if(divP["MostrarMensajes()"] != undefined){
+        divP["MostrarMensajes()"].style.display = "none"; // Ocultar Botón
+      }
+     }
+
+    if(divP["OcultarMensajes()"] != undefined) {
+      if(MM >= 1) { // Si la cantidad de Mensajes Mostrados es mayor que 1
+       divP["OcultarMensajes()"].style.display = ""; // Mostrar botón de "Ocultar Mensajes"
+     } else {
+       divP["OcultarMensajes()"].style.display = "none"; // Ocultar botón
+       }
+     }
+ }
+
+}
+
+// Actualización de la función en cada momento
+document.addEventListener("click", PopupLogic);
+document.addEventListener("contextmenu", PopupLogic);
+document.addEventListener("mousemove", PopupLogic);
+
+
 
 paneSide.oncontextmenu = function() {return false} // Deshabilitar click derecho en la lista de chats
 paneSide.addEventListener("contextmenu", PopupOptions2); // Habilitar menu popup del click derecho en el chat actual
@@ -193,7 +245,8 @@ function PopupOptions2() {
 
     paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo creado
     setTimeout(function() {
-        document.body.addEventListener("contextmenu", DeletePopupOptions); // Habilitar borrado del menu con el click derecho justo después de haberlo creado
+        // Habilitar borrado del menu con el click derecho justo después de haberlo creado
+        document.body.addEventListener("contextmenu", DeletePopupOptions);
         document.body.addEventListener("click", DeletePopupOptions);
     }, POD);
 /*
@@ -206,8 +259,15 @@ function PopupOptions2() {
 }
 
 function DeletePopupOptions() {
+  // Evitar que se le de a más de un botón durante la desaparición del Popup
+  for(var i = 0; i < span_popup[3].children[0].children[0].children.length; i++) {
+    span_popup[3].children[0].children[0].children[i].children[0].removeAttribute("onclick");
+  }
+  
+  // Evitar que se mezcle la acción de aparación del Popup con su desaparición
   document.body.removeEventListener("contextmenu", DeletePopupOptions);
   document.body.removeEventListener("click", DeletePopupOptions);
+
   if(span_popup[3].children[0] != undefined) {
       // Animación de salida
       span_popup[3].children[0].style.transform = "scale(0)";
