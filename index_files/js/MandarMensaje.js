@@ -70,7 +70,7 @@ function MandarMensaje() {
 
         // Mandar mensaje haciendo 'click' en el botón de enviar
         footerValue = footerInput.innerHTML; // Actualización de la varible necesaria para comprobar el varlor del 'input' en cada tecla que se pulsa y se debe comprobar aquí y no antes, sino al enviar el mensaje el 'placeholder' sigue oculto
-        footerPH = document.getElementsByClassName("inputPH")[chat_index]; // El placeholder del buscador de la lista de chats tambien tiene esta clase por eso el +1 para saltarlo
+        footerPH = document.getElementsByClassName("inputPH")[chat_index];
         var footerButton = document.getElementsByClassName("footer-button")[chat_index];
         footerButton.onclick = function() {
             if(footerValue != "") { // Si hay un texto introducido y se hace 'click', ejecuta la functión
