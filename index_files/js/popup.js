@@ -261,7 +261,9 @@ function PopupOptions2() {
 function DeletePopupOptions() {
   // Evitar que se le de a más de un botón durante la desaparición del Popup
   for(var i = 0; i < span_popup[3].children[0].children[0].children.length; i++) {
-    span_popup[3].children[0].children[0].children[i].children[0].removeAttribute("onclick");
+    if(span_popup[3].children[0].children[0].children[i].children[0] != undefined) {
+        span_popup[3].children[0].children[0].children[i].children[0].removeAttribute("onclick");
+    }
   }
   
   // Evitar que se mezcle la acción de aparación del Popup con su desaparición
