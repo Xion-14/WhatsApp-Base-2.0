@@ -8,7 +8,7 @@
 var chats = document.getElementsByClassName("chat");
 
 
-function AddMessage(){
+function ClonMessage(){
 
 var mensaje_clon = chats[chat_index].lastElementChild.cloneNode(true);
 
