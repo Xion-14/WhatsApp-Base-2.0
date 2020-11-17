@@ -1,6 +1,6 @@
 // Conjunto de funciones necesarias de los Easter Eggs
 
-var buscador = document.getElementsByClassName("_3FRCZ")[0];
+var buscador = document.getElementsByClassName("buscador")[0];
 var buscador_bg_texto = document.getElementsByClassName("J3VFH")[0];
 var easter_egg = document.getElementById("easter_egg");
 var m_muted = false;
