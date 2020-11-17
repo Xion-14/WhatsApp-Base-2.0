@@ -1,7 +1,7 @@
 var footer = document.getElementsByTagName('footer')[chat_index];
 var footerInput = footer.children[0].children[1].children[0].children[1];
 var footerValue = footerInput.innerHTML;
-var footerPH = document.getElementsByClassName("inputPH");[chat_index];
+var footerPH = document.getElementsByClassName("inputPH")[chat_index];
 
 function MandarMensaje() {
     
