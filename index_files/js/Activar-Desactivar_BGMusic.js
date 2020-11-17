@@ -45,7 +45,7 @@ ya que no se permite el "autoplay en local.
 */
 
 
-//var welcome_text = document.getElementById("welcome_text");
+var welcome_text = document.getElementById("welcome_text");
 
 function OcultarAviso(){
   
@@ -53,11 +53,12 @@ var aviso = document.getElementById("aviso");
 var app = document.getElementById("app");
 
   aviso.style.display = "none";
-  app.style.display = "";
-  
+  welcome_text.style.display = "none";
+  app.style.display = "";  
 }
 
 function MostrarAviso(){
   aviso.style.display = "";
+  welcome_text.style.display = "none";
   app.style.display = "none";
 }
