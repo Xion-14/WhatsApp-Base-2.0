@@ -173,7 +173,7 @@ function PopupLogic() {
  var buttonMM = document.getElementsByClassName("MM")[chat_index];
 
  for(var i = 2; i <= chats[chat_index].children.length-1; i++) {
-   if(chats[chat_index].children[i].classList[3] == "oculto" || chats[chat_index].children[i].classList[4] == "oculto") {
+   if(chats[chat_index].children[i].classList.contains("oculto")) {
      MO++;
    } else {
      MM++;

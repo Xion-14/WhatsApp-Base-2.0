@@ -71,7 +71,7 @@ var i = 0;
      for(i = 0; i <= chats_name.length - 1; i++) {
 		 chats_name[i].style.display = "none";
 		 bottom_chat[i].removeAttribute("id", "bottom");
-		 if(lista_de_chats[i].childNodes[0].childNodes[0].className == "eJ0yJ _13opk") {
+		 if(lista_de_chats[i].childNodes[0].childNodes[0].classList.contains("eJ0yJ _13opk")) {
 			 chats_name[i].style.display = "";
 			 chat_index = i;
 			 bottom_chat[chat_index].setAttribute("id", "bottom");

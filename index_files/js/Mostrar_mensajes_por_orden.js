@@ -13,7 +13,7 @@ function MostrarMensaje() {
  var n1 = -1; // Limitador para mostrar mensajes 1 a 1
 
  for(i = 0; i<= chats[chat_index].children.length-1; i++) {
-   if(chats[chat_index].children[i].classList[3] === "oculto" || chats[chat_index].children[i].classList[4] === "oculto") {
+   if(chats[chat_index].children[i].classList.contains("oculto")) {
       n1 = i;
       break; // Cada vez que encuentra, de entre todos los mensajes del chat, un mensaje con la clase 'oculto',
              // se incrementa n1 hasta el valor de la posición de ese mensaje y se sale del bucle
@@ -22,7 +22,7 @@ function MostrarMensaje() {
 
  // Busca el 1er mensaje con la clase 'oculto' del chat y le pone la clase 'expuesto' en su lugar (conseguido gracias a la limitación impuesta por n1)
  for(var i = 0; i <= n1; i++) {
-   if(chats[chat_index].children[i].classList[3] === "oculto" || chats[chat_index].children[i].classList[4] === "oculto") {
+   if(chats[chat_index].children[i].classList.contains("oculto")) {
       chats[chat_index].children[i].classList.remove("oculto");
       chats[chat_index].children[i].classList.add("expuesto");
    }
