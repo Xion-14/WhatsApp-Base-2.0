@@ -1,16 +1,18 @@
 // Botón para desplegar el menu lateral de chats
 
-var lista_chats = document.getElementById("Lista de Chats");
+var lista_chats = document.getElementById("Lista-de-Chats");
 
 var p = 0;
 function ListaChats() {
 
 if(p === 0) {
-    lista_chats.style.display = "none";
+    chatGlobal.classList.add("hide");
+    lista_chats.classList.add("hide");
     p = 1;
   
 } else {
-  lista_chats.style.display = "";
+    chatGlobal.classList.remove("hide");
+    lista_chats.classList.remove("hide");
   p = 0;
   
 }

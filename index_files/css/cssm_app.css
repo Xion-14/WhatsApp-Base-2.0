@@ -76,6 +76,17 @@ de los mensajes */
 
 }
 
+/* Transición del panel lateral al desplegarse o al esconderse */
+#Lista-de-Chats, #Chat {
+    transition: flex 0.5s;
+}
+#Lista-de-Chats.hide {
+    flex: 0% !important;
+}
+#Chat.hide {
+    flex: 100% !important;
+}
+
 
 /* Clase que reduce el margen inferior que separa los mensajes */
 ._28DtS {}
@@ -95,11 +106,11 @@ de los mensajes */
 /* Clase del botón del footer */
 .footer-button {}
 
-/* Evita que el texto e imágenes de entrada tenga background*/
+/* Evita que el texto e imágenes de ENTRADA tenga background en el footer*/
 ._3FRCZ.copyable-text.selectable-text img {background: transparent !important;}
 ._3FRCZ.copyable-text.selectable-text span {background: transparent !important;}
 
-/* Evita que el texto e imágenes de salida tenga background*/
+/* Evita que el texto e imágenes de SALIDA tenga background en el footer*/
 ._3Whw5.copyable-text.selectable-text img {background: transparent !important;}
 ._3Whw5.copyable-text.selectable-text span {background: transparent !important;}
 
@@ -745,11 +756,11 @@ html[dir=rtl] .Wu52Z {
 
 @media screen and (min-width: 1301px) {
     .two ._1xXdX {
-        flex:30%
+        flex: 30%;
     }
 
     .two .Wu52Z {
-        flex: 70%
+        flex: 70%;
     }
 
     .three ._1xXdX {
