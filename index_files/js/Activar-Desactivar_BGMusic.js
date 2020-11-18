@@ -6,23 +6,23 @@ music.setAttribute("loop", "");
 var u = 0;
 
 function BGMusic() {
-var icon = document.getElementsByClassName("BGM_Icon");   
-var j = 0;
+  var icon = document.getElementsByClassName("BGM_Icon");   
   music.play();
   
-if(u === 0) { for( j = 0; j <= icon.length - 1; j++ ) {
-    music.muted = true;
-    icon[j].setAttribute("src","index_files/assets/Music OFF.svg");
-    u = 1;
-    }
+  if(u == 0) {
+      for( var i = 0; i <= icon.length - 1; i++ ) {
+        music.muted = true;
+        icon[i].setAttribute("src","index_files/assets/Music OFF.svg");
+        u = 1;
+      }
 
-} else { for( j = 0; j <= icon.length - 1; j++ ) {
-    music.muted = false;
-    icon[j].setAttribute("src","index_files/assets/Music ON.svg");
-    u = 0;
-    }  
-
-}  
+  } else {
+      for( j = 0; j <= icon.length - 1; j++ ) {
+        music.muted = false;
+        icon[j].setAttribute("src","index_files/assets/Music ON.svg");
+        u = 0;
+      }
+  }
 }
 
 // Variable que modifica la musica que suena al cambiar de chat
