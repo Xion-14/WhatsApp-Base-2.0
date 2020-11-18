@@ -34,6 +34,11 @@ function EditableContent() {
     // Icono de mensajes sin leer de un chat
     var iconM = document.getElementsByClassName("_31gEB");
 
+    // Pantalla que se muestra cuando no hay chats
+    var pnc1 = document.getElementsByClassName("_2dH1A")[0];
+    var pnc2 = document.getElementsByClassName("m7gJ2")[0];
+    var pnc3 = document.getElementsByClassName("_1LQvt")[0];
+
     if(edit == 1) {
         // Evitar acceder a un 'link' en modo edición
         onclick = function() {return false}
@@ -58,9 +63,14 @@ function EditableContent() {
         for(i=0;i<=mNot.length-1; i++) {
             mNot[i].setAttribute("contenteditable", "true");
         }
-        for(i=0;i<=mNot.length-1; i++) {
+        for(i=0;i<=iconM.length-1; i++) {
             iconM[i].setAttribute("contenteditable", "true");
         }
+
+        pnc1.setAttribute("contenteditable", "true");
+        pnc2.setAttribute("contenteditable", "true");
+        pnc3.setAttribute("contenteditable", "true");
+
         edit = 0;
     } else {
         //Reactivar la activación de 'links'
@@ -85,9 +95,14 @@ function EditableContent() {
         for(i=0;i<=mNot.length-1; i++) {
             mNot[i].removeAttribute("contenteditable");
         }
-        for(i=0;i<=mNot.length-1; i++) {
+        for(i=0;i<=iconM.length-1; i++) {
             iconM[i].removeAttribute("contenteditable");
         }
+
+        pnc1.removeAttribute("contenteditable");
+        pnc2.removeAttribute("contenteditable");
+        pnc3.removeAttribute("contenteditable");
+
         edit = 1;
     }
 

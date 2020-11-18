@@ -24085,3 +24085,11 @@ html[dir] ._2qmWI:focus ._2EemV {
 /*[data-asset-chat-background-dark]*/ body.dark ._27lSL {
     background-image: url(../assets/bg-chat-tile-dark.png);
 }
+
+/* Imagen del apartado cuando no hay chats abiertos no hay chats */
+._2bBPp {
+    background-image: url(../assets/intro-connection-light.jpg);
+}
+.dark ._2bBPp {
+    background-image: url(../assets/intro-connection-dark.jpg);
+}
