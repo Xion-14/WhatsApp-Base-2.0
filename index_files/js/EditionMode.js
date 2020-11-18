@@ -5,15 +5,21 @@
 // Se han comentado la clase "m61XR" en los iconos de la lista de chats al no aportar nada
 // y al dificultar el uso del modo edición para el icono de "mensajes sin leer" de un chat
 
-var edit = 1;
+// Función que controla el Modo Edición
+function EditionMode() {
 
+    EditableContent();
+    
+}
+
+var edit = 1;
 function EditableContent() {
     
-    var editButton = document.getElementsByTagName("div")["Editar Texto"];
+    var editButton = document.getElementsByTagName("div")["Modo Edicion"];
 
     var common = document.getElementsByClassName("_3Whw5");
     
-    /* Nombre de los menajes grupales */
+    /* Nombre de los mensajes grupales */
 
         // Cuado está agregado el Contacto
         var nameM = document.getElementsByClassName("_3Whw5");
