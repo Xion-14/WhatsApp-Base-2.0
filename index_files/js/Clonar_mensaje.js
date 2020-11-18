@@ -15,5 +15,7 @@ var mensaje_clon = chats[chat_index].lastElementChild.cloneNode(true);
 var mensaje_nuevo = mensaje_clon;
 
   chats[chat_index].appendChild(mensaje_nuevo);
+  // variable declarada en "Seleccionar_chat.js" en la función "CambiarChat(index)"
+  noChat.style.display = "none"; // Corregir el error de la pantalla de 'no chat' al usar el botón para ir al último mensaje
 
 }
