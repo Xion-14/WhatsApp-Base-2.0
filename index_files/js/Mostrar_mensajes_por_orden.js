@@ -27,8 +27,6 @@ function MostrarMensaje() {
       chats[chat_index].children[i].classList.add("expuesto");
    }
  }
- // variable declarada en "Seleccionar_chat.js" en la función "CambiarChat(index)"
- noChat.style.display = "none"; // Corregir el error de la pantalla de 'no chat' al usar el botón para ir al último mensaje
 }
 
 

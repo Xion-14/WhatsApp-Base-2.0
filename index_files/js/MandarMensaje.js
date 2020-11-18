@@ -39,13 +39,11 @@ function MandarMensaje() {
         // Texto mensaje
         m.children[1].children[1].children[0].children[1].children[0].children[0].children[0].
         innerHTML = footerValue;
+        if(edit == 1) { // Controlar el mandar mensajes con el Modo Edición (ir a EditionMode.js)
+            chats[chat_index].appendChild(m);
+            location.href = '#bottom';
+        }
         
-        chats[chat_index].appendChild(m);
-        
-        location.href = '#bottom';
-        // variable declarada en "Seleccionar_chat.js" en la función "CambiarChat(index)"
-        noChat.style.display = "none"; // Corregir el error de la pantalla de 'no chat' al usar el botón para ir al último mensaje
-
     }
 
     // Evitar salto de linea con Enter
@@ -98,17 +96,22 @@ function MandarMensaje() {
     });
     
     // Popup Contextmenu
+    if(edit == 1) { // Controlar edición del 'PopupOptions' con el Modo Edición (ir a EditionMode.js)
+        chatP[chat_index].oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
+        chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu popup del click derecho en el chat actual
+        paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu popup del click derecho en el chat actual
+        setTimeout(function() {
+            chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
+            paneSide.addEventListener("contextmenu", PopupOptions2); // Habilitar menu popup del click derecho en el chat actual
+        }, 500); // Retardo
 
-    chatP[chat_index].oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
-    chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu popup del click derecho en el chat actual
-    paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu popup del click derecho en el chat actual
-    setTimeout(function() {
-        chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
-        paneSide.addEventListener("contextmenu", PopupOptions2); // Habilitar menu popup del click derecho en el chat actual
-    }, 500); // Retardo
-
-    footer.oncontextmenu = function() {return true}
-    footer.addEventListener("contextmenu", DeletePopupOptions);
+        footer.oncontextmenu = function() {return true}
+        footer.addEventListener("contextmenu", DeletePopupOptions);
+    } else {
+        chatP[chat_index].oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
+        chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu popup del click derecho en el chat actual
+        paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu popup del click derecho en el chat actual
+    }
 }
 
 MandarMensaje();

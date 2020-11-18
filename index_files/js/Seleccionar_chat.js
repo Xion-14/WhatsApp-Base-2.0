@@ -24,6 +24,11 @@ function ChatFit() {
 		lista_de_chats[i].style.zIndex = ""+i+"";
 		lista_de_chats[i].style.transform = " translateY("+72*i+"px)";
 		document.getElementsByTagName("div")["Tamaño_del_Chat"].style.height = ""+72*lista_de_chats.length+"px";
+
+		if(chats_name[chat_index].style.display == "") {
+			// variable declarada en "Seleccionar_chat.js" en la función "CambiarChat(index)"
+			noChat.style.display = "none"; // Corregir el error de la pantalla de 'no chat' al dirigirse al último mensaje
+		} else {noChat.style.display = "";}
 	}
 }
 setInterval( ChatFit, 1);
