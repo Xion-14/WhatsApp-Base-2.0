@@ -87,6 +87,11 @@ de los mensajes */
     flex: 100% !important;
 }
 
+/* Ocultar 'check' en el lado de mensajes recibidos */
+.message-in ._1qPwk {
+    display: none;
+}
+
 
 /* Clase que reduce el margen inferior que separa los mensajes */
 ._28DtS {}
@@ -106,13 +111,15 @@ de los mensajes */
 /* Clase del botón del footer */
 .footer-button {}
 
-/* Evita que el texto e imágenes de ENTRADA tenga background en el footer*/
-._3FRCZ.copyable-text.selectable-text img {background: transparent !important;}
-._3FRCZ.copyable-text.selectable-text span {background: transparent !important;}
-
-/* Evita que el texto e imágenes de SALIDA tenga background en el footer*/
-._3Whw5.copyable-text.selectable-text img {background: transparent !important;}
-._3Whw5.copyable-text.selectable-text span {background: transparent !important;}
+/* Evita que el texto e imágenes de ENTRADA y SALIDA tenga background en el footer y al mandarse*/
+._3FRCZ.copyable-text.selectable-text img,
+._3Whw5.copyable-text.selectable-text img,
+._3FRCZ.copyable-text.selectable-text span,
+._3Whw5.copyable-text.selectable-text span,
+._3FRCZ.copyable-text.selectable-text a,
+._3Whw5.copyable-text.selectable-text a {
+    background: transparent !important;
+}
 
 
 /**********************************/
@@ -5782,7 +5789,7 @@ html[dir] .keyboard-user ._2hqOq:focus {
 }
 
 html[dir] ._2hqOq._28DtS {
-    margin-bottom: 2px
+    margin-bottom: 2px;
 }
 
 html[dir] .textsize-xxlarge ._2hqOq._28DtS {
@@ -12591,7 +12598,8 @@ html[lang=en] ._2HWXK {
     width: 74px
 }
 
-html[lang=es] ._2HWXK {
+/* Modificación del margen dentro de las cajas de los mensajes para que cambie automáticamente dependiendo de si es un mensaje mandado o enviado */
+html[lang=es] .message-out ._2HWXK {
     width: 84px
 }
 
