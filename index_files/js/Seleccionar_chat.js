@@ -5,10 +5,8 @@ var lista_de_chats = document.getElementsByClassName("CIL"); // Lista de los pan
 var index = -1; // Valor que devuelven los chats del panel al ser clickados y que se usa para determinar cual ha sido clickado
 var bottom_chat = document.getElementsByClassName("bottom");
 
+
 // Añadir funciones "onclick" a todos los chats del panel continuamente
-
-
-
 function AddOnclick() {
 
     var lc = lista_de_chats;
@@ -20,8 +18,6 @@ setInterval(AddOnclick, 1);
 
 
 // Adaptar la posicion de los chats solo moviendolos de posicion en el codigo
-
-
 function ChatFit() {
 
 	for(var i = 0; i <= lista_de_chats.length - 1; i++) {
@@ -32,6 +28,7 @@ function ChatFit() {
 }
 setInterval( ChatFit, 1);
 
+
 // Cambiar de Chat al hacer click en uno mediante la comparación del valor del atributo 'class'
 // Añade la id="bottom" unicamente al 'div' del chat selecionado con la clase 'bottom'
 var chats_name = document.getElementsByClassName("_2WG1s");
@@ -41,14 +38,17 @@ bottom_chat[chat_index].setAttribute("id", "bottom");
 function CambiarChat(index) {
 	 ColorChat();
 	 OnclickCheck(index);
+
+	 var noChat = document.getElementById("noChat");
+	 noChat.style.display = ""; // Corregir el error de la pantalla de no Chat al usar el botón para ir al último mensaje
 	 
 	 var lc = lista_de_chats;
      for(var i = 0; i <= chats_name.length - 1; i++) {
 		 chats_name[i].style.display = "none";
-		 bottom_chat[i].removeAttribute("id", "bottom");
+		 bottom_chat[i].removeAttribute("id");
 		 if(lc[i].childNodes[0].childNodes[0].classList.contains("_13opk")) {
 			 chats_name[i].style.display = "";
-			 chat_index = i;
+			 chat_index = i; // 'i' es lo que define siempre a 'chat_index'
 			 bottom_chat[chat_index].setAttribute("id", "bottom");
 		 }
      }
@@ -60,7 +60,7 @@ function CambiarChat(index) {
 function ColorChat() {
     var lc = lista_de_chats;
     // Borrar todas las selecciones de click si las hay
-    for (i = 0; i < lc.length; i++) {
+    for (var i = 0; i < lc.length; i++) {
         // Quitar La clase "_13opk"
         lc[i].children[0].children[0].classList.remove('_13opk');
     }
