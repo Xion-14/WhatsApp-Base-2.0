@@ -43,6 +43,8 @@ function MandarMensaje() {
         chats[chat_index].appendChild(m);
         
         location.href = '#bottom';
+        // variable declarada en "Seleccionar_chat.js" en la función "CambiarChat(index)"
+        noChat.style.display = "none"; // Corregir el error de la pantalla de 'no chat' al usar el botón para ir al último mensaje
 
     }
 
