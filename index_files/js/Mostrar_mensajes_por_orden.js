@@ -1,5 +1,5 @@
 // Variable que indica el chat en el que se encuentra el usuario
-var chat_index = 0;
+var chat_index = -1;
 
 // Lista de todos los mensajes de los chats
 var mensajes_chat = document.getElementsByClassName("mensaje");

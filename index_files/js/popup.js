@@ -110,12 +110,13 @@ function OnmouseCheck(index_options_menu) {
 */
 
 var POD = 100; // PopupOptionsDelay
-var paneSide = document.getElementById("pane-side");
 
 span_popup[3].oncontextmenu = function() {return false}
 
-chatP[chat_index].oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
-chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
+if(chat_index >= 0) {
+    chatP[chat_index].oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
+    chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
+}
 function PopupOptions() {
     paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo creado
     /*document.body.addEventListener("mouseover", OnmouseCheck);*/ // Efecto 'hover' con js
@@ -171,14 +172,14 @@ function PopupLogic() {
 
  // Botón que Muestra Mensajes
  var buttonMM = document.getElementsByClassName("MM")[chat_index];
-
- for(var i = 2; i <= chats[chat_index].children.length-1; i++) {
-   if(chats[chat_index].children[i].classList.contains("oculto")) {
-     MO++;
-   } else {
-     MM++;
-   }
-
+ if(chat_index >= 0) {
+     for(var i = 2; i <= chats[chat_index].children.length-1; i++) {
+       if(chats[chat_index].children[i].classList.contains("oculto")) {
+         MO++;
+       } else {
+         MM++;
+       }
+ }
    if(MO >= 1) { // Si la cantidad de Mensajes Ocultos es mayor que 1
       buttonMM.classList.remove("/*_3QjfB*/");
       buttonMM.classList.add("_3QjfB"); // Poner al botón color verde
