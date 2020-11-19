@@ -9,9 +9,17 @@ var edit = 0;
 // Función que controla el Modo Edición
 function EditionMode() {
 
-    if(edit == 0) {edit = 1;
-    
-           } else {edit = 0}
+    if(edit == 0) {
+               edit = 1;
+       } else {edit = 0;
+            setTimeout(function() { // Corregir la reactivación del menu al tenerlo desplegado y luego eliminarlo haciendo click en el botón de modo edición
+                 if(chat_index >= 0) {
+                    chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo borrado
+                 }
+                     paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo borrado
+                     span_popup[3].innerHTML = "";
+            }, 600);
+       }
 
     EditableContent();
     MandarMensaje();
