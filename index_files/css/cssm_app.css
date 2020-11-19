@@ -70,7 +70,7 @@ de los mensajes */
     margin-bottom: 5px;
 }
 .message-out[video] {
-    transform: translate(-195px, 0px);
+    transform: translate(-200px, 0px);
 }
 .message-in[video] {
 
@@ -554,7 +554,7 @@ html[dir=ltr] .h70RQ:after,html[dir=rtl] .h70RQ:after {
     left: 0
 }
 
-/* Comentado para hacer que el footer se vea en cualquier resolución
+/* Comentado para hacer que el footer se vea en cualquier resoluciÃ³n
 @media screen and (max-width: 648px) {
     .h70RQ {
         min-width:648px
@@ -562,7 +562,7 @@ html[dir=ltr] .h70RQ:after,html[dir=rtl] .h70RQ:after {
 }
 */
 
-/* Comentado para hacer que el footer se vea en cualquier resolución
+/* Comentado para hacer que el footer se vea en cualquier resoluciÃ³n
 @media screen and (max-height: 500px) {
     .h70RQ {
         min-height:500px
@@ -9493,7 +9493,7 @@ html[dir] .KeLEe {
 
 ._26s3r {
     width: 58px;
-    height: 54px /*100%*/ /* Evitar bug que hace que la imagen tenga altura 0 al activar el Modo Edición al hacer que la clase "_3Whw5" tenga la etiqueta "contenteditable" (se podría cambiar la imagen a un nivel de etiqueta superior también) */
+    height: 54px /*100%*/ /* Evitar bug que hace que la imagen tenga altura 0 al activar el Modo Edición al hacer que la clase "_3Whw5" tenga la etiqueta "contenteditable" (se podrá cambiar la imagen a un nivel de etiqueta superior también) */
 }
 
 html[dir] ._26s3r {
@@ -12599,7 +12599,7 @@ html[lang=en] ._2HWXK {
     width: 74px
 }
 
-/* Modificación del margen dentro de las cajas de los mensajes para que cambie automáticamente dependiendo de si es un mensaje mandado o enviado */
+/* ModificaciÃ³n del margen dentro de las cajas de los mensajes para que cambie automÃ¡ticamente dependiendo de si es un mensaje mandado o enviado */
 html[lang=es] .message-out ._2HWXK {
     width: 84px
 }
