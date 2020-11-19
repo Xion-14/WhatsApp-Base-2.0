@@ -1474,7 +1474,7 @@ html[dir=rtl] ._1cuFe {
 }
 
 ._1LkpH {
-    visibility: visible
+    visibility: visible;
 }
 
 @keyframes fS0Xa {
@@ -2129,7 +2129,7 @@ html[dir] .dark ::-webkit-scrollbar-thumb {
 }
 
 ::-webkit-scrollbar-track {
-    background: hsla(0,0%,100%,.1)
+    background: hsla(0,0%,100%,.1);
 }
 
 html[dir] .dark ::-webkit-scrollbar-track {

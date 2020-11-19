@@ -28,7 +28,7 @@ function EditableContent() {
     /* Nombre de los mensajes grupales */
 
         // Cuado está agregado el Contacto
-        var nameM = document.getElementsByClassName("_3Whw5");
+        //var nameM = document.getElementsByClassName("_3Whw5");
 
         // Cuado No está agregado el Contacto
         var nameT = document.getElementsByClassName("_3UUTc");
@@ -56,13 +56,13 @@ function EditableContent() {
         onclick = function() {return false}
         editButton.classList.remove("/*_3QjfB*/");
         editButton.classList.add("_3QjfB");
-        var i = 0;
-        for(i=0;i<=common.length-1; i++) {
+        
+        for(var i=0;i<=common.length-1; i++) {
             common[i].setAttribute("contenteditable", "true");
         }
-        for(i=0;i<=nameM.length-1; i++) {
+        /*for(i=0;i<=nameM.length-1; i++) {
             nameM[i].setAttribute("contenteditable", "true");
-        }
+        }*/
         for(i=0;i<=nameT.length-1; i++) {
             nameT[i].setAttribute("contenteditable", "true");
         }
@@ -91,9 +91,9 @@ function EditableContent() {
         for(i=0;i<=common.length-1; i++) {
             common[i].removeAttribute("contenteditable");
         }
-        for(i=0;i<=nameM.length-1; i++) {
+        /*for(i=0;i<=nameM.length-1; i++) {
             nameM[i].removeAttribute("contenteditable");
-        }
+        }*/
         for(i=0;i<=nameT.length-1; i++) {
             nameT[i].removeAttribute("contenteditable");
         }
