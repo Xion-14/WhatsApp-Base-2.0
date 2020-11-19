@@ -33,6 +33,7 @@ if(chat_index >= 0) {
     bottom_chat[chat_index].setAttribute("id", "bottom");
 }
 
+
 var paneSide = document.getElementById("pane-side"); // Zona de los panles
 function CambiarChat() {
 	 ColorChat();
@@ -41,6 +42,8 @@ function CambiarChat() {
      MandarMensaje(); // Actualizar el popup del contexmenu al cambiar de chat
 }
 paneSide.addEventListener("click", CambiarChat);
+
+
 
 // Borra el color de selección de todos los chats del panel mediante la eliminación de la clase '_13opk'
 function ColorChat() {
