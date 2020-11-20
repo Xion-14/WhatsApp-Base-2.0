@@ -1,7 +1,6 @@
 // Mostrar ventana emergente para tomar una decisión
 
 // Coordenadas ratón
-
 var x;
 var y;
 
