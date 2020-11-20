@@ -8,17 +8,24 @@
 var edit = 0;
 // Función que controla el Modo Edición
 function EditionMode() {
-
+    
+    var editButton = document.getElementsByTagName("div")["Modo Edicion"]; // Botón para activar el modo edición que se ilumina al estar activado
     if(edit == 0) {
+
                edit = 1;
+               editButton.classList.remove("/*_3QjfB*/");
+               editButton.classList.add("_3QjfB");
+
        } else {edit = 0;
-            setTimeout(function() { // Corregir la reactivación del menu al tenerlo desplegado y luego eliminarlo haciendo click en el botón de modo edición
-                 if(chat_index >= 0) {
-                    chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo borrado
-                 }
-                     paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo borrado
-                     span_popup[3].innerHTML = "";
-            }, 600);
+               editButton.classList.add("/*_3QjfB*/");
+               editButton.classList.remove("_3QjfB");
+               setTimeout(function() { // Corregir la reactivación del menu al tenerlo desplegado y luego eliminarlo haciendo click en el botón de modo edición
+                    if(chat_index >= 0) {
+                       chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo borrado
+                    }
+                        paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo borrado
+                        span_popup[3].innerHTML = "";
+               }, 600);
        }
 
     EditableContent();
@@ -28,8 +35,6 @@ function EditionMode() {
 
 
 function EditableContent() {
-    
-    var editButton = document.getElementsByTagName("div")["Modo Edicion"];
 
     var common = document.getElementsByClassName("_3Whw5");
     
@@ -62,8 +67,6 @@ function EditableContent() {
     if(edit == 1) {
         // Evitar acceder a un 'link' en modo edición
         onclick = function() {return false}
-        editButton.classList.remove("/*_3QjfB*/");
-        editButton.classList.add("_3QjfB");
         
         for(var i=0;i<=common.length-1; i++) {
             common[i].setAttribute("contenteditable", "true");
@@ -94,8 +97,7 @@ function EditableContent() {
     } else {
         //Reactivar la activación de 'links'
         onclick = function() {return true}
-        editButton.classList.add("/*_3QjfB*/");
-        editButton.classList.remove("_3QjfB");
+        
         for(i=0;i<=common.length-1; i++) {
             common[i].removeAttribute("contenteditable");
         }
