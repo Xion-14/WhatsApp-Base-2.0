@@ -58,6 +58,15 @@ function EditableContent() {
 
     // Icono de mensajes sin leer de un chat
     var iconM = document.getElementsByClassName("_31gEB");
+    
+        // Texto de mensaje de agregar contactos
+        var contText = document.getElementsByClassName("mIaLg");
+
+        // Botón de agregar contactos
+        var contB = document.getElementsByClassName("_16q36");
+
+        // Texto de información de los mensajes de descarga
+        var descInfo = document.getElementsByClassName("_17V3H");
 
     // Pantalla que se muestra cuando no hay chats
     var pnc1 = document.getElementsByClassName("_2dH1A")[0];
@@ -89,6 +98,15 @@ function EditableContent() {
         for(i=0;i<=iconM.length-1; i++) {
             iconM[i].setAttribute("contenteditable", "true");
         }
+        for(i=0;i<=contText.length-1; i++) {
+            contText[i].setAttribute("contenteditable", "true");
+        }
+        for(i=0;i<=contB.length-1; i++) {
+            contB[i].setAttribute("contenteditable", "true");
+        }
+        for(i=0;i<=descInfo.length-1; i++) {
+            descInfo[i].setAttribute("contenteditable", "true");
+        }
 
         pnc1.setAttribute("contenteditable", "true");
         pnc2.setAttribute("contenteditable", "true");
@@ -118,6 +136,15 @@ function EditableContent() {
         }
         for(i=0;i<=iconM.length-1; i++) {
             iconM[i].removeAttribute("contenteditable");
+        }
+        for(i=0;i<=contText.length-1; i++) {
+            contText[i].removeAttribute("contenteditable");
+        }
+        for(i=0;i<=contB.length-1; i++) {
+            contB[i].removeAttribute("contenteditable");
+        }
+        for(i=0;i<=descInfo.length-1; i++) {
+            descInfo[i].removeAttribute("contenteditable");
         }
 
         pnc1.removeAttribute("contenteditable");

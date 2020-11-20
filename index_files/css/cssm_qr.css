@@ -332,6 +332,39 @@ html[dir] ._3FgB2 {
     color: var(--button-secondary)
 }
 
+/* Clases añadidas para adaptar el mensaje de descarga*/
+._2jX3t {
+    width: 100%;
+    display: flex;
+    min-width: 0;
+    min-height: 0;
+}
+
+._3tRja {
+    justify-content: flex-start
+}
+
+.dWI29 {
+    flex-direction: row;
+}
+
+._1GbxC {
+    align-items: center
+}
+
+._2xUEC {
+    flex: 0 1 auto;
+    order: 0;
+    min-width: 0;
+    min-height: 0;
+}
+
+._2XHG4 {
+    align-self: auto
+}
+
+
+
 ._3tCto {
     height: 0
 }

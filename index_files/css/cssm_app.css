@@ -173,6 +173,11 @@ iframe {
     color: var(--teal)
 }
 
+a {
+    text-decoration: none;
+    color: #039be5
+}
+
 ._17WMI {
     display: inline-block;
     flex: 0 0 auto
@@ -5748,7 +5753,7 @@ html[dir] ._32TSB {
 ._2hqOq {
     position: relative;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
 }
 
 html[dir] ._2hqOq {
@@ -5895,7 +5900,7 @@ html[dir] ._2qhWD._23x2e {
 
 ._2et95 {
     position: relative;
-    flex: none;
+    /* flex: none; */
     color: var(--message-primary);
     font-size: 14.2px;
     line-height: 19px;
@@ -10489,7 +10494,7 @@ html[dir] ._3eShu {
 
 ._1TGsd {
     box-sizing: border-box;
-    width: 276px
+    width: /**276px**/336px
 }
 
 html[dir] ._1TGsd {
@@ -10499,7 +10504,7 @@ html[dir] ._1TGsd {
 .S22q0 {
     position: relative;
     box-sizing: border-box;
-    width: 276px
+    width: /**276px**/336px
 }
 
 html[dir] .S22q0 {
@@ -11188,7 +11193,7 @@ html[dir=rtl] ._2IcPn {
     justify-content: center;
     width: 34px;
     height: 34px;
-    color: rgba(var(--icon-strong-rgb),.5)
+    color: rgba(var(--icon-strong-rgb),.5);
 }
 
 ._1G_gX {
@@ -11734,6 +11739,13 @@ html[dir=rtl] ._2p0ln ._3FcDh {
     align-items: center;
     justify-content: center;
     overflow: hidden
+    /*display: block;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    color: inherit*/
 }
 
 html[dir=ltr] .YQVY1,html[dir=rtl] .YQVY1 {
@@ -18261,6 +18273,18 @@ html[dir=rtl] ._2UTyI ._1KWxB {
     min-width: 250px
 }
 
+/* Añadido de la siguiente versión de WhatsApp Web para poder poner mensajes de descarga */
+._20adz {
+    width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+html[dir] ._20adz {
+    border-radius: 6px;
+    cursor: pointer
+}
+
 ._2a28v {
     position: relative;
     display: flex;
@@ -18503,6 +18527,27 @@ html[dir] ._27yrw {
     color: var(--secondary-lighter)
 }
 
+/* Clase importada de la version nueva de WhatsApp Web para el mensaje de descarga */
+._4NdIu {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    color: inherit;
+}
+
+html[dir] ._4NdIu {
+    cursor: pointer
+}
+
+html[dir=ltr] ._4NdIu,html[dir=rtl] ._4NdIu {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px
+}
+
+
 ._3Ur5f {
     position: absolute;
     top: 0;
@@ -18524,6 +18569,45 @@ html[dir=rtl] ._3Ur5f {
     flex-direction: column;
     height: 100%
 }
+
+/* Clases Añadida para adaptar el mensaje de descarga */
+.ICvlM {
+    height: 34px
+}
+
+html[dir] .ICvlM {
+    padding: 13px 19px
+}
+
+.l2z-S {
+    flex: none
+}
+
+html[dir] .l2z-S {
+    margin-top: -1px
+}
+
+._3k59q,._2K5wo {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+._2K5wo {
+    position: relative;
+    top: -2px
+}
+
+html[dir] ._2K5wo {
+    margin: 0 10px;
+}
+
+html[dir=rtl] ._2K5wo {
+    text-align: left;
+    text-align: right
+}
+
+
 
 ._3wNld {
     flex: 1;
