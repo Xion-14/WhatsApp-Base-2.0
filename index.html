@@ -7,7 +7,19 @@
 
 <link rel="stylesheet" href="index_files/css/cssm_app.css">
 <link rel="stylesheet" href="index_files/css/cssm_qr.css">
+<script>
 
+// Cambiar 'favicon' al estar offline  
+function offLine() {
+    var favicon = document.getElementById("favicon");
+    if(navigator.onLine) {
+      favicon.href = "index_files/assets/favicon.png";
+    } else {favicon.href = "index_files/assets/favicon-error.png";}
+}
+
+onmousemove = function() {offLine()}
+
+</script>
 <style>
 html, body, #app {
               height: 100%;
