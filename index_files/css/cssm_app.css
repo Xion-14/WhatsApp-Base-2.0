@@ -92,11 +92,6 @@ de los mensajes */
     display: none;
 }
 
-/* Emoticonos del panel desplegable */
-.emojik {
-    background: url(../assets/Emoticonos/f9625a59e46bd5c96ee3b2b72984f076_w_1870-64.png);
-    background-size: cover;
-}
 
 
 /* Clase que reduce el margen inferior que separa los mensajes */
@@ -124,7 +119,7 @@ de los mensajes */
 ._3Whw5.copyable-text.selectable-text span,
 ._3FRCZ.copyable-text.selectable-text a,
 ._3Whw5.copyable-text.selectable-text a {
-    background: transparent !important;
+    /* background: transparent !important; */
 }
 
 
