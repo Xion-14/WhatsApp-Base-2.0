@@ -151,7 +151,7 @@ function PopupOptions() {
         // Habilitar borrado del menu con el click derecho justo después de haberlo creado
         document.body.addEventListener("contextmenu", DeletePopupOptions);
         document.body.addEventListener("click", DeletePopupOptions);
-    }, 500);
+    }, 300);
 /*
     hover_options_menu = document.getElementsByClassName("I4jbF")[0];
     var i = 0;
@@ -250,7 +250,7 @@ function PopupOptions2() {
         // Habilitar borrado del menu con el click derecho justo después de haberlo creado
         document.body.addEventListener("contextmenu", DeletePopupOptions);
         document.body.addEventListener("click", DeletePopupOptions);
-    }, 500);
+    }, 300);
 /*
     hover_options_menu = document.getElementsByClassName("I4jbF")[0];
     var i = 0;
