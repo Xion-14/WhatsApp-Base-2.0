@@ -1,5 +1,11 @@
 /* Emoticonos del panel desplegable */
 
+img.emojik {
+    background: transparent !important;
+    width: 24px;
+    height: 24px;
+}
+
 /* 1. Emoticonos y Personas */
 .emojik.a1 {
     background: url('../assets/Emoticonos/1. Emoticonos y Personas/f9625a59e46bd5c96ee3b2b72984f076_w_1857-64.png');
