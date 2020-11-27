@@ -102,10 +102,12 @@ de los mensajes */
 
 .dark audio::-webkit-media-controls-current-time-display {
     color: #fff;
+    text-shadow: none;
 }
 
 .dark audio::-webkit-media-controls-time-remaining-display {
     color: #fff;
+    text-shadow: none;
 }
 
 
