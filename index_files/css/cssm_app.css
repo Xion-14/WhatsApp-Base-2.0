@@ -95,6 +95,21 @@ de los mensajes */
     display: none;
 }
 
+/* Audios */
+.dark audio::-webkit-media-controls-enclosure{
+    background: #3b3b3b;
+}
+
+.dark audio::-webkit-media-controls-current-time-display {
+    color: #fff;
+}
+
+.dark audio::-webkit-media-controls-time-remaining-display {
+    color: #fff;
+}
+
+
+
 
 
 /* Clase que reduce el margen inferior que separa los mensajes */
