@@ -18,6 +18,9 @@
 .bottom {
 }
 
+/* Indica los mensajes o respuestas de mensajes que tienen nombre */
+.nombre {}
+
 [hide-name=true] {
     display: none !important;
 }

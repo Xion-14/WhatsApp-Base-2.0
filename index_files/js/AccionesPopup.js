@@ -55,3 +55,57 @@ function MostrarMensajes() {
    }
   }
 }
+
+// Mostrar/Ocultar nombres de los mensajes
+
+// Lista de mensajes o respuestas con nombres a mostrar u ocultar
+var mNames = document.getElementsByClassName("nombre");
+
+// Respuestas de los mensajes
+var mAnswers = document.getElementsByClassName("_3AFCK");
+
+// Lista de nombres de los mensajes 
+var names = document.getElementsByClassName("zGvn8");
+var nS; // Nombre Seleccionado
+var nA;
+
+function PosicionMensaje() { // Obtiene la posición del mensaje seleccionado con 'click derecho'
+  for(var i = 0; i < mNames.length; i++) {
+    mNames[i].addEventListener("contextmenu", function() {
+      // Obtiene la Posición del mensaje seleccionado
+      nS = Array.prototype.indexOf.call(mNames, this); // Array.prototype.indexOf.call(collection, element);
+    });
+  }
+
+  for(var i = 0; i < mAnswers.length; i++) {
+    mAnswers[i].addEventListener("contextmenu", function() {
+      // Obtiene la Posición del mensaje seleccionado
+      setTimeout(function() {nS = -1;}, 0); // Reiniciar valor para evitar que no se quede guardado
+      nA = Array.prototype.indexOf.call(mAnswers, this); // Array.prototype.indexOf.call(collection, element);
+    });
+  }
+
+  for(var i = 0; i < mNames.length; i++) {
+    mNames[i].addEventListener("oncontextmenu", PosicionMensaje);
+  }
+}
+PosicionMensaje();
+
+var mAC;
+function MostrarOcultarNombres() {
+    
+  if(names[nS] != undefined) {
+    if(names[nS].getAttribute("hide-name") == "false") {
+        names[nS].setAttribute("hide-name", "true");
+    } else {names[nS].setAttribute("hide-name", "false");}
+  }
+
+  mAC = mAnswers[nA].children[0].children[0].children[1].children[0].children[0];
+
+  if(mAC != undefined) {
+    if(mAC.getAttribute("hide-name") == "false") {
+        mAC.setAttribute("hide-name", "true");
+    } else {mAC.setAttribute("hide-name", "false");}
+  } nA = -1; // Reiniciar valor para evitar que no se quede guardado
+  
+}
