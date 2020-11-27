@@ -107,6 +107,7 @@ function HideChats() {
 			lc[i].children[0].children[0].classList.remove('_13opk'); // Borrar todas las selecciones de click si las hay
 			bottom_chat[i].removeAttribute("id"); // Quitar la id de los 'DIV.bottom'
 			noChat.style.display = ""; // Mostar pantalla de 'noChat'
+			chat_index = -1; // Reiniciar el valor de 'chat_index' para evitar que al hacer click en un panel de chat sin chat correspondiente se muestre el último mostrado
 		 }
 	}
 }
