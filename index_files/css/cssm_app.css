@@ -21,11 +21,14 @@
 /* Indica los mensajes o respuestas de mensajes que tienen nombre */
 .nombre {}
 
+/* Indica los mensajes con respuesta */
+.respuesta{}
+
 [hide-name=true] {
     display: none !important;
 }
 
-[hide-response=true] {
+[hide-answer=true] {
     display: none !important;
 }
 

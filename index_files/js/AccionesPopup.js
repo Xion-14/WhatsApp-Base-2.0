@@ -60,7 +60,8 @@ function MostrarMensajes() {
 
 // Lista de mensajes o respuestas con nombres a mostrar u ocultar
 var mNames = document.getElementsByClassName("nombre");
-
+var mAnswers = document.getElementsByClassName("respuesta");
+var nR; // Mensaje con respuesta seleccionado
 
 // Lista de nombres de los mensajes 
 var names = document.getElementsByClassName("zGvn8");
@@ -86,13 +87,20 @@ function PosicionMensaje() { // Obtiene la posición del mensaje seleccionado co
     });
   }
 
+  for(var i = 0; i < mAnswers.length; i++) {
+    mAnswers[i].addEventListener("contextmenu", function() {
+      // Obtiene la Posición del mensaje seleccionado
+      nR = Array.prototype.indexOf.call(mAnswers, this); // Array.prototype.indexOf.call(collection, element);
+    });
+  }
+
   for(var i = 0; i < mNames.length; i++) {
     mNames[i].addEventListener("oncontextmenu", PosicionMensaje);
   }
 }
 PosicionMensaje();
 
-var mAC;
+var mAC; // Nombre de las respuestas
 function MostrarOcultarNombres() { // Todos los mensajes y respuestas con nombre tienen la clase 'nombre' pero solo la usan como tal los mensajes normales, pero para que funcione correctamente tienen que tenerlo tambien las respuestas con nombre para que el array de 'nombres' coincida con el array de 'mensajes y respuestas con nombre'
     
   if(names[nS] != undefined) {
@@ -108,5 +116,16 @@ function MostrarOcultarNombres() { // Todos los mensajes y respuestas con nombre
         mAC.setAttribute("hide-name", "true");
     } else {mAC.setAttribute("hide-name", "false");}
   } nA = -1; // Reiniciar valor para evitar que se almacene
+  
+}
+
+// Mostrar/Ocultar respuesta de los mensajes
+function MostrarOcultarRespuestas() {
+
+  if(answers[nR] != undefined) {
+    if(answers[nR].getAttribute("hide-answer") == "false") {
+        answers[nR].setAttribute("hide-answer", "true");
+    } else {answers[nR].setAttribute("hide-answer", "false");}
+  } nR = -1; // Reiniciar valor para evitar que se almacene
   
 }
