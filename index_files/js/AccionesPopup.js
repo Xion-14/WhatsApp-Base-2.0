@@ -61,13 +61,14 @@ function MostrarMensajes() {
 // Lista de mensajes o respuestas con nombres a mostrar u ocultar
 var mNames = document.getElementsByClassName("nombre");
 
-// Respuestas de los mensajes
-var mAnswers = document.getElementsByClassName("_3AFCK");
 
 // Lista de nombres de los mensajes 
 var names = document.getElementsByClassName("zGvn8");
 var nS; // Nombre Seleccionado
-var nA;
+
+// Lista de las respuestas de los mensajes
+var answers = document.getElementsByClassName("_3AFCK");
+var nA; // Respuesta seleccionada
 
 function PosicionMensaje() { // Obtiene la posición del mensaje seleccionado con 'click derecho'
   for(var i = 0; i < mNames.length; i++) {
@@ -77,11 +78,11 @@ function PosicionMensaje() { // Obtiene la posición del mensaje seleccionado co
     });
   }
 
-  for(var i = 0; i < mAnswers.length; i++) {
-    mAnswers[i].addEventListener("contextmenu", function() {
+  for(var i = 0; i < answers.length; i++) {
+    answers[i].addEventListener("contextmenu", function() {
       // Obtiene la Posición del mensaje seleccionado
-      setTimeout(function() {nS = -1;}, 0); // Reiniciar valor para evitar que no se quede guardado
-      nA = Array.prototype.indexOf.call(mAnswers, this); // Array.prototype.indexOf.call(collection, element);
+      setTimeout(function() {nS = -1;}, 0); // Reiniciar valor al hacer 'click derecho' en una respuesta para no modificar el estado del nombre del mensaje anterior
+      nA = Array.prototype.indexOf.call(answers, this); // Array.prototype.indexOf.call(collection, element);
     });
   }
 
@@ -92,20 +93,20 @@ function PosicionMensaje() { // Obtiene la posición del mensaje seleccionado co
 PosicionMensaje();
 
 var mAC;
-function MostrarOcultarNombres() {
+function MostrarOcultarNombres() { // Todos los mensajes y respuestas con nombre tienen la clase 'nombre' pero solo la usan como tal los mensajes normales, pero para que funcione correctamente tienen que tenerlo tambien las respuestas con nombre para que el array de 'nombres' coincida con el array de 'mensajes y respuestas con nombre'
     
   if(names[nS] != undefined) {
     if(names[nS].getAttribute("hide-name") == "false") {
         names[nS].setAttribute("hide-name", "true");
     } else {names[nS].setAttribute("hide-name", "false");}
-  }
+  } nS = -1; // Reiniciar valor para evitar que se almacene
 
-  mAC = mAnswers[nA].children[0].children[0].children[1].children[0].children[0];
+  mAC = answers[nA].children[0].children[0].children[1].children[0].children[0];
 
   if(mAC != undefined) {
     if(mAC.getAttribute("hide-name") == "false") {
         mAC.setAttribute("hide-name", "true");
     } else {mAC.setAttribute("hide-name", "false");}
-  } nA = -1; // Reiniciar valor para evitar que no se quede guardado
+  } nA = -1; // Reiniciar valor para evitar que se almacene
   
 }
