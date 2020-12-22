@@ -2072,7 +2072,7 @@ body {
     -ms-user-select: none;
     user-select: none;
     background-color: #dddbd1;
-    background-image: linear-gradient(180deg,#dddbd1,#d2dbdc)
+    background-image: linear-gradient(180deg,#dddbd1,#d2dbdc);
 }
 
 html[dir] body.voip {
@@ -2154,7 +2154,7 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,.2)
+    background-color: rgba(0,0,0,.2);
 }
 
 html[dir] .dark ::-webkit-scrollbar-thumb {
@@ -2612,7 +2612,8 @@ html[dir=rtl] .overlay {
     --button-secondary-background-hover-rgb:255,255,255;
     --button-secondary-hover:#05cd51;
     --button-secondary-hover-rgb:5.44623,204.85377,81.46347;
-    --chat-marker:#999;--chat-marker-rgb:153,153,153;
+    --chat-marker:#999;
+    --chat-marker-rgb:153,153,153;
     --chat-marker-admin:#07bc4c;
     --chat-marker-admin-rgb:7,188,76;
     --chat-marker-admin-border:rgba(7,188,76,0.7);
@@ -2639,7 +2640,7 @@ html[dir=rtl] .overlay {
     --compose-panel-background-hover-rgb:230,230,230;
     --compose-primary:#4a4a4a;
     --compose-primary-rgb:74,74,74;
-    --conversation-panel-background:#e5ddd5;
+    --conversation-panel-background:#e5ddd5; /* Fondo del Chat*/
     --conversation-panel-background-rgb:229,221,213;
     --conversation-panel-border:rgba(0,0,0,0.03);
     --conversation-panel-border-rgb:0,0,0;
@@ -2865,7 +2866,8 @@ html[dir=rtl] .overlay {
     --secondary-lighter-rgb:0,0,0;
     --secondary-stronger:rgba(0,0,0,0.8);
     --secondary-stronger-rgb:0,0,0;
-    --shadow:#000;--shadow-rgb:0,0,0;
+    --shadow:#000;
+    --shadow-rgb:0,0,0;
     --shadow-light:rgba(0,0,0,0.08);
     --shadow-light-rgb:0,0,0;
     --spinner-default:#ccc;
@@ -2890,7 +2892,8 @@ html[dir=rtl] .overlay {
     --status-secondary-rgb:255,255,255;
     --status-secondary-stronger:#b3b3b3;
     --status-secondary-stronger-rgb:179,179,179;
-    --success:#07bc4c;--success-rgb:7,188,76;
+    --success:#07bc4c;
+    --success-rgb:7,188,76;
     --suspicious-background:rgba(244,67,54,0.8);
     --suspicious-background-rgb:244,67,54;
     --system-message-background:rgba(225,245,254,0.92);
@@ -2911,7 +2914,8 @@ html[dir=rtl] .overlay {
     --toast-background-rgb:0,0,0;
     --tooltip-background:rgba(89,89,89,0.85);
     --tooltip-background-rgb:89.25,89.25,89.25;
-    --typing:#07bc4c;--typing-rgb:7,188,76;
+    --typing:#07bc4c;
+    --typing-rgb:7,188,76;
     --unread-background:#fff;
     --unread-background-rgb:255,255,255;
     --unread-bar-background:hsla(0,0%,100%,0.25);
@@ -4201,7 +4205,7 @@ html[dir=rtl] .overlay {
     --compose-panel-background-hover-rgb:21,30,35;
     --compose-primary:#f1f1f2;
     --compose-primary-rgb:241,241,242;
-    --conversation-panel-background:#0d1418;
+    --conversation-panel-background:#0d1418; /* Fondo del Chat*/
     --conversation-panel-background-rgb:13.12731,19.91681,23.57269;
     --conversation-panel-border:rgba(241,241,242,0.12);
     --conversation-panel-border-rgb:241,241,242;

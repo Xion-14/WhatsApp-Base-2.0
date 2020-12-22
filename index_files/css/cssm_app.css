@@ -5485,7 +5485,7 @@ html[dir] ._3Fxa2 {
 }
 
 html[dir] ._27lSL {
-    background-repeat: repeat
+    background-repeat: repeat;
 }
 
 html[dir=ltr] ._27lSL {
@@ -21845,7 +21845,7 @@ html[dir] ._2TrcJ {
 }
 
 html[dir] ._2WG1s {
-    background-color: var(--conversation-panel-background)
+    background-color: var(--conversation-panel-background);
 }
 
 html[dir=ltr] ._2WG1s {

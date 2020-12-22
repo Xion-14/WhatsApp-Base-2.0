@@ -71,7 +71,16 @@ var nS; // Nombre Seleccionado
 var answers = document.getElementsByClassName("_3AFCK");
 var nA; // Respuesta seleccionada
 
+var nM; // Mensaje Seleccionado
+
 function PosicionMensaje() { // Obtiene la posición del mensaje seleccionado con 'click derecho'
+  for(var i = 0; i < mensajes_chat.length; i++) {
+    mensajes_chat[i].addEventListener("contextmenu", function() {
+      // Obtiene la Posición del mensaje seleccionado
+      nM = Array.prototype.indexOf.call(mensajes_chat, this); // Array.prototype.indexOf.call(collection, element);
+    });
+  }
+
   for(var i = 0; i < mNames.length; i++) {
     mNames[i].addEventListener("contextmenu", function() {
       // Obtiene la Posición del mensaje seleccionado
@@ -129,4 +138,9 @@ function MostrarOcultarRespuestas() {
     } else {answers[nR].setAttribute("hide-answer", "false");}
   } nR = -1; // Reiniciar valor para evitar que se almacene
   
+}
+
+// Eliminar Mensaje
+function EliminarMensaje() {
+  mensajes_chat[nM].remove();
 }
