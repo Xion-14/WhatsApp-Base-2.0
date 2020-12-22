@@ -143,4 +143,5 @@ function MostrarOcultarRespuestas() {
 // Eliminar Mensaje
 function EliminarMensaje() {
   mensajes_chat[nM].remove();
+  nM = -1; // Reiniciar valor para evitar que se almacene
 }
