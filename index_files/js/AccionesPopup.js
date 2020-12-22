@@ -108,6 +108,7 @@ function MostrarOcultarNombres() { // Todos los mensajes y respuestas con nombre
         names[nS].setAttribute("hide-name", "true");
     } else {names[nS].setAttribute("hide-name", "false");}
   } nS = -1; // Reiniciar valor para evitar que se almacene
+    nR = -1; // Reiniciar valor para evitar que se almacene  
 
   mAC = answers[nA].children[0].children[0].children[1].children[0].children[0];
 
