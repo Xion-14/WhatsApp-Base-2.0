@@ -8,7 +8,7 @@ var bottom_chat = document.getElementsByClassName("bottom"); // Hay uno en cada 
 
 
 // Adaptar la posicion de los chats solo moviendolos de posicion en el codigo
-function ChatFit() {PosicionMensaje();
+function ChatFit() {PosicionMensaje(); // Detección constante de mensajes para detectar los nuevos. "AccionesPopup.js"
 
 	for(var i = 0; i <= lista_de_chats.length - 1; i++) {
 		lista_de_chats[i].style.zIndex = ""+i+"";
