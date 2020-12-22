@@ -8,7 +8,7 @@ var bottom_chat = document.getElementsByClassName("bottom"); // Hay uno en cada 
 
 
 // Adaptar la posicion de los chats solo moviendolos de posicion en el codigo
-function ChatFit() {
+function ChatFit() {mensajes_chat = document.getElementsByClassName("mensaje");
 
 	for(var i = 0; i <= lista_de_chats.length - 1; i++) {
 		lista_de_chats[i].style.zIndex = ""+i+"";

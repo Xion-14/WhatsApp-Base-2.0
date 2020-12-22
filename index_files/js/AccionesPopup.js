@@ -3,6 +3,10 @@ var chat_index = -1;
 
 // Lista de todos los mensajes de los chats
 var mensajes_chat = document.getElementsByClassName("mensaje");
+
+oncontextmenu = function() {
+  mensajes_chat = document.getElementsByClassName("mensaje");
+}
   
   var chats = document.getElementsByClassName("chat");   // Lista de todos los chats
   var chatP = document.getElementsByClassName("_3h-WS"); // Lista de los chats pero sin 'header' ni 'footer' (la zona visible del chat donde se ve su contenido, sirve como referencia a sus dimensiones)
