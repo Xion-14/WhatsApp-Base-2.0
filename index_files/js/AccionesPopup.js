@@ -4,9 +4,6 @@ var chat_index = -1;
 // Lista de todos los mensajes de los chats
 var mensajes_chat = document.getElementsByClassName("mensaje");
 
-oncontextmenu = function() {
-  mensajes_chat = document.getElementsByClassName("mensaje");
-}
   
   var chats = document.getElementsByClassName("chat");   // Lista de todos los chats
   var chatP = document.getElementsByClassName("_3h-WS"); // Lista de los chats pero sin 'header' ni 'footer' (la zona visible del chat donde se ve su contenido, sirve como referencia a sus dimensiones)
@@ -78,6 +75,7 @@ var nA; // Respuesta seleccionada
 var nM; // Mensaje Seleccionado
 
 function PosicionMensaje() { // Obtiene la posición del mensaje seleccionado con 'click derecho'
+
   for(var i = 0; i < mensajes_chat.length; i++) {
     mensajes_chat[i].addEventListener("contextmenu", function() {
       // Obtiene la Posición del mensaje seleccionado
@@ -110,6 +108,7 @@ function PosicionMensaje() { // Obtiene la posición del mensaje seleccionado co
   for(var i = 0; i < mNames.length; i++) {
     mNames[i].addEventListener("oncontextmenu", PosicionMensaje);
   }
+
 }
 PosicionMensaje();
 
