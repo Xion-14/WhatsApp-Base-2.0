@@ -12412,9 +12412,15 @@ html[lang=en] ._2oWZe {
     width: 56px
 }
 
-html[lang=es] ._2oWZe {
+/* Espacio adaptativo*/
+html[lang=es] .message-in ._2oWZe {
+    width: 56px;
+}
+
+html[lang=es] .message-out ._2oWZe {
     width: 75px;
 }
+
 
 html[lang=et] ._2oWZe {
     width: 57px
