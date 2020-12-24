@@ -116,6 +116,7 @@ if(chat_index >= 0) {
     chatP[chat_index].oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
     chatP[chat_index].addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
 }
+
 function PopupOptions() {
     paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo creado
     /*document.body.addEventListener("mouseover", OnmouseCheck);*/ // Efecto 'hover' con js
@@ -133,9 +134,7 @@ function PopupOptions() {
             span_popup[3].children[0].style.left = x + -span_popup[3].children[0].offsetWidth + "px";
             //span_popup[3].children[0].style.transformOrigin = "right top";
         }
-        }, 0);
 
-    setTimeout(function() { // Corregir detección del tamaño para asignar correctamente la posición (medida tomada al tener altura variable con la opción mostrar mensajes)
         if(y > (chatGlobal.offsetHeight - span_popup[3].children[0].offsetHeight) && span_popup[3].children[0] != undefined) { // Si el ratón está más bajo que la altura del menu
             span_popup[3].children[0].style.top = y - span_popup[3].children[0].offsetHeight + "px";
             span_popup[3].children[0].style.transformOrigin = span_popup[3].children[0].style.transformOrigin.replace("top", "bottom");
@@ -144,14 +143,13 @@ function PopupOptions() {
             span_popup[3].children[0].style.top = y + "px";
             //span_popup[3].children[0].style.transformOrigin = "top";
         }
-    }, 0);
-
-    // Animación de entrada
-    if(span_popup[3].children[0] != undefined) {
-      setTimeout(function(){
+        
+        // Animación de entrada
+        setTimeout(function() {
           span_popup[3].children[0].style.transform = "scale(1)";
-      }, 200); // Retardo necesario para que el 'transform-origin' funcione correctamente
-    }
+        }, 200); // Retardo necesario para que el 'transform-origin' funcione correctamente
+
+    }, 0);
     
     chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo creado
     setTimeout(function() {
@@ -217,9 +215,9 @@ document.addEventListener("contextmenu", PopupLogic);
 document.addEventListener("mousemove", PopupLogic);
 
 
-
 paneSide.oncontextmenu = function() {return false} // Deshabilitar click derecho en la lista de chats
 paneSide.addEventListener("contextmenu", PopupOptions2); // Habilitar menu popup del click derecho en el chat actual
+
 function PopupOptions2() {
     if(chat_index >= 0) {
         chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo creado
@@ -240,9 +238,7 @@ function PopupOptions2() {
             span_popup[3].children[0].style.left = x + -span_popup[3].children[0].offsetWidth + "px";
             //span_popup[3].children[0].style.transformOrigin = "right top";
         }
-    }, 0);
 
-    setTimeout(function() { // Corregir detección del tamaño para asignar correctamente la posición (medida tomada al tener altura variable con la opción mostrar mensajes)
         if(y > (paneSide.offsetHeight - span_popup[3].children[0].offsetHeight) && span_popup[3].children[0] != undefined) { // Si el ratón está más bajo que la altura del menu
             span_popup[3].children[0].style.top = y - span_popup[3].children[0].offsetHeight + "px";
             span_popup[3].children[0].style.transformOrigin = span_popup[3].children[0].style.transformOrigin.replace("top", "bottom");
@@ -251,14 +247,13 @@ function PopupOptions2() {
             span_popup[3].children[0].style.top = y + "px";
             //span_popup[3].children[0].style.transformOrigin = "top";
         }
+
+        setTimeout(function(){
+          span_popup[3].children[0].style.transform = "scale(1)";
+        }, 200);
+
     }, 0);
 
-    // Animación de entrada
-    if(span_popup[3].children[0] != undefined) {
-      setTimeout(function(){
-          span_popup[3].children[0].style.transform = "scale(1)";
-      }, 200);
-    }
 
     paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo creado
     setTimeout(function() {

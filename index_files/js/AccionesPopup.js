@@ -114,9 +114,11 @@ function MostrarOcultarNombres() { // Todos los mensajes y respuestas con nombre
         names[nS].setAttribute("hide-name", "true");
     } else {names[nS].setAttribute("hide-name", "false");}
   } nS = -1; // Reiniciar valor para evitar que se almacene
-    nR = -1; // Reiniciar valor para evitar que se almacene  
+    nR = -1; // Reiniciar valor para evitar que se almacene
 
-  mAC = answers[nA].children[0].children[0].children[1].children[0].children[0];
+  if(answers[nA] != undefined) {
+    mAC = answers[nA].children[0].children[0].children[1].children[0].children[0];
+  }
 
   if(mAC != undefined) {
     if(mAC.getAttribute("hide-name") == "false") {
@@ -139,6 +141,8 @@ function MostrarOcultarRespuestas() {
 
 // Eliminar Mensaje
 function EliminarMensaje() {
-  mensajes_chat[nM].remove();
+  if(mensajes_chat[nM] != undefined) {  
+    mensajes_chat[nM].remove();
+  }
   nM = -1; // Reiniciar valor para evitar que se almacene
 }
