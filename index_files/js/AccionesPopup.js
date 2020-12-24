@@ -56,17 +56,17 @@ function MostrarMensajes() {
 // Lista de mensajes o respuestas con nombres a mostrar u ocultar
 var mNames = document.getElementsByClassName("nombre");
 var mAnswers = document.getElementsByClassName("respuesta");
-var nR; // Mensaje con respuesta seleccionado
+var nR = -1; // Mensaje con respuesta seleccionado
 
 // Lista de nombres de los mensajes 
 var names = document.getElementsByClassName("zGvn8");
-var nS; // Nombre Seleccionado
+var nS = -1; // Nombre Seleccionado
 
 // Lista de las respuestas de los mensajes
 var answers = document.getElementsByClassName("_3AFCK");
-var nA; // Respuesta seleccionada
+var nA = -1; // Respuesta seleccionada
 
-var nM; // Mensaje Seleccionado
+var nM = -1; // Mensaje Seleccionado
 
 function PosicionMensaje() { // Obtiene la posición del mensaje seleccionado con 'click derecho'
 

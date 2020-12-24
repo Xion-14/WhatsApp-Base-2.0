@@ -3729,7 +3729,10 @@ html[dir=rtl] ._2RLvm {
 
 html[dir] .PVMjB {
     padding: 8px;
-    border-radius: 50%
+    border-radius: 50%;
+
+    /* Transición para el color del icono del lápiz del Modo Edición */
+    transition: color 0.3s;
 }
 
 html[dir=ltr] .PVMjB {
@@ -23192,7 +23195,7 @@ html[dir] .FIHAk:focus {
 
 /* Comentado al no ser necesario */
 /*.FIHAk*/._3QjfB {
-    color: var(--teal)
+    color: var(--unread-marker-background);
 }
 
 html[dir] .FIHAk._1HKOF svg {
