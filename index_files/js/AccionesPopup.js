@@ -36,8 +36,8 @@ function OcultarMensajes() {
   
   var m1 = mensajes_chat;
   
-  for(var i = 2 ; i <= m1.length-1 ; i++) {
-   if(chats[chat_index].children[i] != undefined) {
+  for(var i = 0 ; i <= m1.length-1 ; i++) {
+   if(chats[chat_index].children[i] != undefined && chats[chat_index].children[i].classList.contains("mensaje")) {
       chats[chat_index].children[i].classList.remove("expuesto");
       chats[chat_index].children[i].classList.add("oculto");
    }
@@ -49,8 +49,8 @@ function MostrarMensajes() {
   
   var m1 = mensajes_chat;
   
-  for(var i = 2 ; i <= m1.length-1 ; i++) {
-   if(chats[chat_index].children[i] != undefined) {
+  for(var i = 0 ; i <= m1.length-1 ; i++) {
+   if(chats[chat_index].children[i] != undefined && chats[chat_index].children[i].classList.contains("mensaje")) {
       chats[chat_index].children[i].classList.remove("oculto");
       chats[chat_index].children[i].classList.add("expuesto");
    }
