@@ -3,11 +3,6 @@
     overflow: hidden;
 }
 
-.mensaje[video] {
-    /* Los videos para que se vean bien no tienen que tener el 'overflow: hidden' */
-    overflow: ;
-}
-
 .cola {}
 
 .oculto {
