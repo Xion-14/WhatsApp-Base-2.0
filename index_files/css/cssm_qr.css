@@ -1503,7 +1503,7 @@ html[dir=rtl] ._1cuFe {
     -webkit-user-select: text;
     -moz-user-select: text;
     -ms-user-select: text;
-    user-select: text
+    user-select: text;
 }
 
 ._1LkpH {
@@ -2030,7 +2030,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
     outline: none;
     margin: 0;
     padding: 0;
-    border: 0
+    border: 0;
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {

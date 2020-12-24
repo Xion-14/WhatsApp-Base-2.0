@@ -23,7 +23,7 @@ function ChatFit() {PosicionMensaje(); // Detección constante de mensajes para 
 		}
 	}
 }
-setInterval(ChatFit, 100);
+setInterval(ChatFit, 200);
 
 
 // Cambiar de Chat al hacer click en uno mediante la comparación del valor del atributo 'class'

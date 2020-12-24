@@ -141,8 +141,22 @@ function MostrarOcultarRespuestas() {
 
 // Eliminar Mensaje
 function EliminarMensaje() {
-  if(mensajes_chat[nM] != undefined) {  
-    mensajes_chat[nM].remove();
+  if(mensajes_chat[nM] != undefined) {
+
+    mensajes_chat[nM].style.transition = "height 0.7s, margin 0.7s";
+
+    // Para que el efecto de transición funcione tiene que tener una altura ya definida
+    mensajes_chat[nM].style.height = mensajes_chat[nM].offsetHeight + "px";
+    
+    setTimeout(function() {
+      mensajes_chat[nM].style.height = "0";
+      mensajes_chat[nM].style.marginBottom = "0";
+    }, 0);
+    
+    setTimeout(function() {
+      mensajes_chat[nM].remove();
+      nM = -1; // Reiniciar valor para evitar que se almacene
+    }, 1000);
+
   }
-  nM = -1; // Reiniciar valor para evitar que se almacene
 }

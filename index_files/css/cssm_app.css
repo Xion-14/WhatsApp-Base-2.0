@@ -1,8 +1,14 @@
 .mensaje {
+    /* Necesario para crear el efecto de desaparación con 'height' al usar position absolute */
+    overflow: hidden;
 }
 
-.cola {
+.mensaje[video] {
+    /* Los videos para que se vean bien no tienen que tener el 'overflow: hidden' */
+    overflow: ;
 }
+
+.cola {}
 
 .oculto {
     display: none !important;
@@ -12,11 +18,9 @@
     display: ;
 }
 
-.chat {
-}
+.chat {}
 
-.bottom {
-}
+.bottom {}
 
 /* Indica los mensajes o respuestas de mensajes que tienen nombre */
 .nombre {}
@@ -77,10 +81,14 @@ de los mensajes */
     margin-bottom: 5px;
 }
 .message-out[video] {
-    transform: translate(-200px, 0px);
+    transform: translate(-79px, 0px);
 }
-.message-in[video] {
+.message-in[video] {}
 
+[video] ._1F528,
+[video] .zGvn8 {/* Ajuste del video para su correcta visualización*/
+    left: -119px;
+    position: relative;
 }
 
 /* Transición del panel lateral al desplegarse o al esconderse */
@@ -5787,7 +5795,7 @@ html[dir] ._2hqOq {
 
 html[dir=ltr] ._2hqOq,html[dir=rtl] ._2hqOq {
     padding-right: 9%;
-    padding-left: 9%
+    padding-left: 9%;
 }
 
 html[dir] .textsize-xxlarge ._2hqOq {
@@ -5986,7 +5994,7 @@ html[dir] ._2et95:last-of-type {
 }
 
 .message-in {
-    align-items: flex-start
+    align-items: flex-start;
 }
 
 .message-out {
@@ -6437,7 +6445,7 @@ html[dir] ._3KpsV {
 }
 
 ._3NiSW {
-    position: relative
+    position: relative;
 }
 
 ._2szmK {
@@ -8827,7 +8835,7 @@ html[dir] ._2FVVk.VV0FC ._3FRCZ {
     color: var(--teal-lighter);
     font-weight: 500;
     font-size: 12.8px;
-    line-height: 22px
+    line-height: 22px;
 }
 
 .zGvn8 .emoji {
@@ -14950,7 +14958,7 @@ html[dir] .I7CDE ._250-l {
 ._2_Dd_ {
     position: relative;
     z-index: 1;
-    max-width: 336px
+    max-width: 336px;
 }
 
 html[dir] ._2_Dd_ {
@@ -14986,7 +14994,7 @@ html[dir] ._38cGw {
 
 ._38cGw ._1F528 {
     position: relative;
-    display: inline-block
+    display: inline-block;
 }
 
 html[dir=ltr] ._38cGw ._1F528 {
