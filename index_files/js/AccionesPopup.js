@@ -148,6 +148,10 @@ function EliminarMensaje() {
     // Para que el efecto de transición funcione tiene que tener una altura ya definida
     mensajes_chat[nM].style.height = mensajes_chat[nM].offsetHeight + "px";
     
+    if(document.body.classList.contains("dark")) {
+      mensajes_chat[nM].style.background = "#fff1";
+    } else {mensajes_chat[nM].style.background = "#1af2";}
+    
     setTimeout(function() {
       mensajes_chat[nM].style.height = "0";
       mensajes_chat[nM].style.marginBottom = "0";
