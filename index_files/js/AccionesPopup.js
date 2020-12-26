@@ -154,7 +154,10 @@ function EliminarMensaje() {
     
     setTimeout(function() {
       mensajes_chat[nM].style.height = "0";
+      mensajes_chat[nM].style.marginTop = "0";
       mensajes_chat[nM].style.marginBottom = "0";
+      mensajes_chat[nM].style.paddingTop = "0";
+      mensajes_chat[nM].style.paddingBottom = "0";
     }, 0);
     
     setTimeout(function() {
