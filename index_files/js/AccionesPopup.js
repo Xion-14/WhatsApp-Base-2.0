@@ -143,7 +143,8 @@ function MostrarOcultarRespuestas() {
 function EliminarMensaje() {
   if(mensajes_chat[nM] != undefined) {
 
-    mensajes_chat[nM].style.transition = "height 0.7s, margin 0.7s";
+    mensajes_chat[nM].style.transitionDuration = "0.7s";
+    mensajes_chat[nM].style.transitionProperty = "height, margin, padding";
 
     // Para que el efecto de transición funcione tiene que tener una altura ya definida
     mensajes_chat[nM].style.height = mensajes_chat[nM].offsetHeight + "px";
