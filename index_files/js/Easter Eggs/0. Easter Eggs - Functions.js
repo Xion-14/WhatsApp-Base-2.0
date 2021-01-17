@@ -5,14 +5,17 @@ var buscador_bg_texto = document.getElementsByClassName("J3VFH")[0];
 var easter_egg = document.getElementById("easter_egg");
 var m_muted = false;
 
-function myBuscador() {
- if(buscador.innerText != "") {
-    buscador_bg_texto.style.visibility = "hidden";
- } else { buscador_bg_texto.style.visibility = "visible"; }
-}
 
 buscador.addEventListener("keydown", myBuscador);
 
+function myBuscador() {
+  if(buscador.innerText != "") {
+     buscador_bg_texto.style.visibility = "hidden";
+  } else { buscador_bg_texto.style.visibility = "visible"; }
+}
+setInterval(myBuscador, 10);
+
+// Función para Easter Egg de video
 function StartEasterEgg() {
 
     m_muted = false;
@@ -28,17 +31,30 @@ function StartEasterEgg() {
 
 function EndEasterEgg() {
 
-  setInterval(function() { if(easter_egg.ended == true) {
-              document.body.setAttribute("onclick", "OcultarAviso(); music.play()");
-              OcultarAviso();
-              if(m_muted === false) { BGMusic(); }; easter_egg.style.display = "none";
-              easter_egg.currentTime = 0;
-              };
-  }, 1);
+  easter_egg.onended = function() {
+    if(easter_egg.ended == true) {
+      document.body.setAttribute("onclick", "OcultarAviso(); music.play()");
+      OcultarAviso();
+      if(m_muted === false) { BGMusic(); };
+      easter_egg.style.display = "none";
+      easter_egg.currentTime = 0;
+    }
+  }
 
 }
 
-setInterval(myBuscador, 1);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Terra Final Fantasy VI
