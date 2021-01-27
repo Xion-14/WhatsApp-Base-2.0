@@ -3,7 +3,7 @@ var footerInput = footer.children[0].children[1].children[0].children[1];
 var footerValue = footerInput.innerHTML;
 var footerPH = document.getElementsByClassName("inputPH")[chat_index];
 
-function MandarMensaje() {
+function MandarMensaje() { // Al ejecutar la función se situa en la "entrada de texto" del chat actual para habilitarlo, mandar mensajes se hace con la función "nuevoMensaje"
     
     if(chat_index >= 0) {
         footer = document.getElementsByTagName('footer')[chat_index];
