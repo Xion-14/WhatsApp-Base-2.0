@@ -1,6 +1,7 @@
 <html class="js serviceworker adownload cssanimations csstransitions webp webp-alpha webp-animation webp-lossless" dir="LTR" loc="es" lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="color-scheme" content="dark">
 <title>WhatsApp-Base 2.0</title>
 
 <link id="favicon" rel="shortcut icon" type="image/png" href="index_files/assets/favicon.png">
@@ -178,21 +179,23 @@ function myAlert() {
     <!--/// Botón para activar/desactivar el Modo Oscuro-->
    
 <script>
-  
-    var d=1;
-function DarkTheme() { 
-var i = 0;                     
-   if (d == 2) {
-      for( i = 0; i <= document.getElementsByClassName("_27lSL").length - 1; i++ ) {
-        document.getElementsByTagName("body")[0].setAttribute("class", "dark");
-      }   
-      d=1;
-    } else {
-        for( i = 0; i <= document.getElementsByClassName("_27lSL").length - 1; i++ ) {
-          document.getElementsByTagName("body")[0].setAttribute("class", "web");
-        }
-        d=2;
-      }
+// Etiqueta <meta> que controla el Modo Oscuro interno de la web
+var colorScheme = document.getElementsByTagName('meta')["color-scheme"];
+
+function DarkTheme() {
+
+  if(document.body.classList.contains('dark')) {
+
+    document.body.className = 'web';
+    colorScheme.content = 'light';
+
+  } else {
+
+    document.body.className = 'dark';
+    colorScheme.content = 'dark';
+    
+  }
+        
 }
 </script>
 </head>

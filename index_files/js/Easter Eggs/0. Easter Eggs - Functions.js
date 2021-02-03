@@ -58,83 +58,87 @@ function EndEasterEgg() {
 
 
 // Terra Final Fantasy VI
-function Terra() {
-    // Pixel
-    var O = "%c  ";
 
     // Colores
-    var vC = "background: #80A880"; // Verde Claro
-    var vO = "background: #285038"; // Verde Oscuro
-    var vU = "background: #133030"; // Verde Oscuro 2
+    var bg = 'background: ';
+    
+    var vC = bg + '#80A880'; // Verde Claro
+    var vO = bg + '#285038'; // Verde Oscuro
+    var vU = bg + '#133030'; // Verde Oscuro 2
 
-    var mC = "background: #C880F8"; // Morado Claro
-    var mO = "background: #8058D8"; // Morado Oscuro
+    var mC = bg + '#C880F8'; // Morado Claro
+    var mO = bg + '#8058D8'; // Morado Oscuro
 
-    var r = "background: #911918"; // Rojo
-    var am = "background: #B8900A"; // Amarillo
+    var rj = bg + '#911918'; // Rojo
+    var am = bg + '#B8900A'; // Amarillo
 
-    var cC = "background: #F3C087"; // Carne Claro
-    var cO = "background: #C86838"; // Carne Oscuro
+    var cC = bg + '#F3C087'; // Carne Claro
+    var cO = bg + '#C86838'; // Carne Oscuro
 
-    var n = "background: #000"; // Negro
-    var b = "background: #FFF"; // Blanco
-    var t = ""; // Pixel vacío
+    var ng = bg + '#000'; // Negro
+    var bl = bg + '#FFF'; // Blanco
+    var tt = bg + 'transparent'; // Pixel con color transparente
 
+function Terra() {
+
+    // Pixel
+    var OO = "%c  ";
+    
     // 15x24 px
     console.log(
 
     // Pixeles
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O+"\n"+
-    O+O+O+O+O+O+O+O+O+O+O+O+O+O+O
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+"\n"+
+    OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO+OO
     ,
 
     // Colores
-    t ,t ,t ,t ,n ,n ,t ,n ,n ,n ,mO,mO,n ,t ,t ,
-    t ,t ,t ,n ,vO,vO,vO,vO,vO,vO,n ,mO,mC,n ,t ,
-    t ,n ,n ,vC,vC,vC,vO,vC,vC,vC,vC,n ,mO,n ,n ,
-    n ,vC,vC,vO,vC,b ,vC,vC,b ,vC,vC,vO,n ,vC,n ,
-    t ,n ,n ,vC,vC,vC,vC,vC,vC,vO,vC,vO,n ,vC,n ,
-    t ,n ,vC,vO,vO,cC,vO,vO,b ,vO,vC,vO,n ,vC,n ,
-    t ,n ,b ,vO,cO,cC,b ,vO,b ,vC,vO,vO,n ,vO,n ,
-    t ,n ,vC,vO,cO,cC,b ,cO,vO,vC,vC,vO,n ,vO,n ,
-    t ,t ,n ,vO,n ,n ,cC,n ,n ,n ,vO,n ,vO,n ,t ,
-    t ,t ,t ,n ,b ,vU,cC,cC,vU,b ,n ,vO,vC,n ,t ,
-    t ,n ,n ,n ,cC,vU,cC,cC,vU,cC,n ,n ,vO,n ,t ,
-    n ,mC,mC,mO,n ,cC,cC,cC,cC,n ,mO,mC,mC,n ,t ,
-    t ,n ,mC,mO,mO,n ,cO,cO,n ,mO,mO,mC,n ,t ,t ,
-    t ,n ,n ,mC,n ,cC,cC,cC,cC,n ,mC,n ,n ,t ,t ,
-    t ,n ,cC,n ,am,r ,r ,r ,r ,am,n ,cC,n ,t ,t ,
-    t ,n ,cC,cO,n ,mO,mC,mC,mO,n ,cO,cC,n ,t ,t ,
-    n ,cO,r ,n ,cO,r ,r ,r ,r ,cO,n ,r ,cO,n ,t ,
-    n ,cO,cC,n ,cO,cC,r ,r ,cC,cO,n ,cC,cO,n ,t ,
-    n ,cO,cC,n ,n ,b ,cO,cO,b ,n ,n ,cC,cO,n ,t ,
-    t ,n ,n ,n ,r ,cC,cO,cO,cC,r ,n ,n ,n ,t ,t ,
-    t ,t ,t ,n ,am,r ,r ,r ,r ,am,n ,t ,t ,t ,t ,
-    t ,t ,t ,n ,r ,am,r ,r ,am,r ,n ,t ,t ,t ,t ,
-    t ,t ,t ,n ,r ,r ,r ,r ,r ,r ,n ,t ,t ,t ,t ,
-    t ,t ,t ,t ,n ,am,n ,n ,am,n ,t ,t ,t ,t ,t
+    tt,tt,tt,tt,ng,ng,tt,ng,ng,ng,mO,mO,ng,tt,tt,
+    tt,tt,tt,ng,vO,vO,vO,vO,vO,vO,ng,mO,mC,ng,tt,
+    tt,ng,ng,vC,vC,vC,vO,vC,vC,vC,vC,ng,mO,ng,ng,
+    ng,vC,vC,vO,vC,bl,vC,vC,bl,vC,vC,vO,ng,vC,ng,
+    tt,ng,ng,vC,vC,vC,vC,vC,vC,vO,vC,vO,ng,vC,ng,
+    tt,ng,vC,vO,vO,cC,vO,vO,bl,vO,vC,vO,ng,vC,ng,
+    tt,ng,bl,vO,cO,cC,bl,vO,bl,vC,vO,vO,ng,vO,ng,
+    tt,ng,vC,vO,cO,cC,bl,cO,vO,vC,vC,vO,ng,vO,ng,
+    tt,tt,ng,vO,ng,ng,cC,ng,ng,ng,vO,ng,vO,ng,tt,
+    tt,tt,tt,ng,bl,vU,cC,cC,vU,bl,ng,vO,vC,ng,tt,
+    tt,ng,ng,ng,cC,vU,cC,cC,vU,cC,ng,ng,vO,ng,tt,
+    ng,mC,mC,mO,ng,cC,cC,cC,cC,ng,mO,mC,mC,ng,tt,
+    tt,ng,mC,mO,mO,ng,cO,cO,ng,mO,mO,mC,ng,tt,tt,
+    tt,ng,ng,mC,ng,cC,cC,cC,cC,ng,mC,ng,ng,tt,tt,
+    tt,ng,cC,ng,am,rj,rj,rj,rj,am,ng,cC,ng,tt,tt,
+    tt,ng,cC,cO,ng,mO,mC,mC,mO,ng,cO,cC,ng,tt,tt,
+    ng,cO,rj,ng,cO,rj,rj,rj,rj,cO,ng,rj,cO,ng,tt,
+    ng,cO,cC,ng,cO,cC,rj,rj,cC,cO,ng,cC,cO,ng,tt,
+    ng,cO,cC,ng,ng,bl,cO,cO,bl,ng,ng,cC,cO,ng,tt,
+    tt,ng,ng,ng,rj,cC,cO,cO,cC,rj,ng,ng,ng,tt,tt,
+    tt,tt,tt,ng,am,rj,rj,rj,rj,am,ng,tt,tt,tt,tt,
+    tt,tt,tt,ng,rj,am,rj,rj,am,rj,ng,tt,tt,tt,tt,
+    tt,tt,tt,ng,rj,rj,rj,rj,rj,rj,ng,tt,tt,tt,tt,
+    tt,tt,tt,tt,ng,am,ng,ng,am,ng,tt,tt,tt,tt,tt
 
     )
 }
