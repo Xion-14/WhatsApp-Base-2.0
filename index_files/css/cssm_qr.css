@@ -314,6 +314,8 @@ html[dir] #startup {
     background-color: var(--startup-background)
 }
 
+div#startup {}
+
 .YaHbb {
     color: var(--button-secondary)
 }

@@ -57,7 +57,7 @@ function OcultarAviso(){
   app.style.display = "";  
 }
 
-function MostrarAviso(){
+function MostrarAviso() {
   aviso.style.display = "";
   welcome_text.style.display = "none";
   app.style.display = "none";

@@ -20,11 +20,11 @@ function EditionMode() {
                editButton.classList.add("/*_3QjfB*/");
                editButton.classList.remove("_3QjfB");
                setTimeout(function() { // Corregir la reactivación del menu al tenerlo desplegado y luego eliminarlo haciendo click en el botón de modo edición
-                    if(chat_index >= 0) {
-                       chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo borrado
-                    }
-                        panelLateral.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo borrado
-                        span_popup[3].innerHTML = "";
+                    
+                       chatContent.parentElement.removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo borrado
+ 
+                       panelLateral.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo borrado
+                       span_popup[3].innerHTML = "";
                }, 600);
        }
 

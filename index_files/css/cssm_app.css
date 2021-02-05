@@ -57,10 +57,14 @@ img {
     user-select: none;
 }
 
+
+
 /* Color del texto del placeholder */
-footer input._3uMse::-webkit-input-placeholder {
+footer ._3uMse::-webkit-input-placeholder {
     color: var(--input-placeholder);
 }
+
+
 
 /* Ocultar la colita de los mensajes al no estar la clase
 '_1dvTe' que quita el redondeo de la esquina superior izquierda de los mensajes */

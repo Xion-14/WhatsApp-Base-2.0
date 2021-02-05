@@ -1,5 +1,7 @@
 var footer = document.getElementsByTagName('footer')[0];
-var footerInput = footer.children[0].children[1];
+var footerInput = footer.children[0].children[1].children[0].children[1];
+var footerPH = document.getElementsByClassName("inputPH")[0];
+
 var footerButton = document.getElementsByClassName("footer-button")[0];
 
 function MandarMensaje() { // Al ejecutar la función se situa en la "entrada de texto" del chat actual para habilitarlo, mandar mensajes se hace con la función "nuevoMensaje"
@@ -39,7 +41,7 @@ function MandarMensaje() { // Al ejecutar la función se situa en la "entrada de
 
         // Texto mensaje
         m.children[1].children[1].children[0].children[1].children[0].children[0].children[0].
-        innerHTML = footerInput.value;
+        innerHTML = footerInput.children[0].children[1].innerHTML;
         if(edit == 1) { // Controlar el mandar mensajes con el Modo Edición (ir a EditionMode.js)
             chatContent.appendChild(m);
             location.href = '#bottom';
@@ -53,7 +55,7 @@ function MandarMensaje() { // Al ejecutar la función se situa en la "entrada de
 
               // Hacer salto de linea
 
-            } else if(event.key == "Enter") {return event.returnValue = false;} // event.preventDefault()
+          } else if(event.key == "Enter") {return event.returnValue = false;} // event.preventDefault()
     }
 
     // Mandar mensaje al presionar 'Enter' en la entrada de texto
@@ -63,54 +65,57 @@ function MandarMensaje() { // Al ejecutar la función se situa en la "entrada de
 
             // No mandar mensaje
 
-        } else if(footerInput.value != "" && event.key == "Enter") { // Si hay un texto introducido y se presiona 'Enter', ejecuta la functión
+        } else if(footerInput.children[0].children[1].innerHTML != "" && event.key == "Enter") { // Si hay un texto introducido y se presiona 'Enter', ejecuta la functión
                     nuevoMensaje();
-                    footerInput.value = ""; // Vaciar entrada al presionar 'Enter'
-                    footerInput.focus(); // Selecciona de nuevo la entrada de texto para poder escribir otra vez al haber pulsado 'Enter'
+                    footerInput.children[0].children[1].innerHTML = ""; // Vaciar entrada al presionar 'Enter'
+                    footerInput.children[0].children[1].focus(); // Selecciona de nuevo la entrada de texto para poder escribir otra vez al haber pulsado 'Enter'
         }
 
         // Mandar mensaje haciendo 'click' en el botón de enviar
         footerButton.onclick = function() {
-            if(footerInput.value != "") { // Si hay un texto introducido y se hace 'click', ejecuta la functión
+            if(footerInput.children[0].children[1].innerHTML != "") { // Si hay un texto introducido y se hace 'click', ejecuta la functión
                   nuevoMensaje();
-                  footerInput.value = ""; // Vaciar entrada al hacer 'click' en el botón
+                  footerInput.children[0].children[1].innerHTML = ""; // Vaciar entrada al hacer 'click' en el botón
                   var audioButtton = '<div class="_3TDpK"><span><button class="_2r1fJ"><span data-testid="ptt" data-icon="ptt" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M11.999 14.942c2.001 0 3.531-1.53 3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531S8.469 2.35 8.469 4.35v7.061c0 2.001 1.53 3.531 3.53 3.531zm6.238-3.53c0 3.531-2.942 6.002-6.237 6.002s-6.237-2.471-6.237-6.002H3.761c0 4.001 3.178 7.297 7.061 7.885v3.884h2.354v-3.884c3.884-.588 7.061-3.884 7.061-7.885h-2z"></path></svg></span></button></span></div>';
                   footerButton.innerHTML = audioButtton; // Cambiar botón del 'footer' al de grabar mensaje
             }
         }
 
-             // Ocultar placeholder cuando haya texto en el footer y cambiar el icono del botón
-             if(footerInput.value != "") {
-                var sendButton = '<button class="_1U1xa"><span data-testid="send" data-icon="send" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span></button>';
-                footerButton.innerHTML = sendButton; // Cambiar botón del 'footer' al de enviar mensaje
-             } else {
-                var audioButtton = '<div class="_3TDpK"><span><button class="_2r1fJ"><span data-testid="ptt" data-icon="ptt" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M11.999 14.942c2.001 0 3.531-1.53 3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531S8.469 2.35 8.469 4.35v7.061c0 2.001 1.53 3.531 3.53 3.531zm6.238-3.53c0 3.531-2.942 6.002-6.237 6.002s-6.237-2.471-6.237-6.002H3.761c0 4.001 3.178 7.297 7.061 7.885v3.884h2.354v-3.884c3.884-.588 7.061-3.884 7.061-7.885h-2z"></path></svg></span></button></span></div>';
-                footerButton.innerHTML = audioButtton; // Cambiar botón del 'footer' al de grabar mensaje
-             }
+
+        // Ocultar placeholder cuando haya texto en el footer y cambiar el icono del botón
+        if(footerInput.children[0].children[1].innerHTML != "") {
+            footerPH.style.visibility = "hidden"; // Ocultar 'placeholder'
+            var sendButton = '<button class="_1U1xa"><span data-testid="send" data-icon="send" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span></button>';
+            footerButton.innerHTML = sendButton; // Cambiar botón del 'footer' al de enviar mensaje
+        } else {
+            footerPH.style.visibility = "visible" // Mostrar 'placeholder'
+            var audioButtton = '<div class="_3TDpK"><span><button class="_2r1fJ"><span data-testid="ptt" data-icon="ptt" class=""><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M11.999 14.942c2.001 0 3.531-1.53 3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531S8.469 2.35 8.469 4.35v7.061c0 2.001 1.53 3.531 3.53 3.531zm6.238-3.53c0 3.531-2.942 6.002-6.237 6.002s-6.237-2.471-6.237-6.002H3.761c0 4.001 3.178 7.297 7.061 7.885v3.884h2.354v-3.884c3.884-.588 7.061-3.884 7.061-7.885h-2z"></path></svg></span></button></span></div>';
+            footerButton.innerHTML = audioButtton; // Cambiar botón del 'footer' al de grabar mensaje
+        }
 
     });
 
     // Popup Contextmenu
     if(edit == 1) { // Controlar edición del 'PopupOptions' con el Modo Edición (ir a EditionMode.js)
         if(chat_index >= 0) {
-            chatContent.oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
-            chatContent.removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu popup del click derecho en el chat actual
+            chatContent.parentElement.parentElement.parentElement.oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
+            chatContent.parentElement.parentElement.parentElement.removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu popup del click derecho en el chat actual
 
             setTimeout(function() {
-                chatContent.addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
+                chatContent.parentElement.parentElement.parentElement.addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
                 
             }, 500); // Retardo necesario para evitar bugs
         }
-        panelLateral.addEventListener("contextmenu", PopupOptions2); // Habilitar menu popup del click derecho en el chat actual
+        chatListContainer.addEventListener("contextmenu", PopupOptions2); // Habilitar menu popup del click derecho en el chat actual
         //panelLateral.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu popup del click derecho en el chat actual
         footer.oncontextmenu = function() {return true}
         footer.addEventListener("contextmenu", DeletePopupOptions);
     } else {
         if(chat_index >= 0) {
-            chatContent.oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
-            chatContent.removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu popup del click derecho en el chat actual
+            chatContent.parentElement.parentElement.parentElement.oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
+            chatContent.parentElement.parentElement.parentElement.removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu popup del click derecho en el chat actual
         }
-            panelLateral.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu popup del click derecho en el chat actual
+            chatListContainer.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu popup del click derecho en el chat actual
     }
 
 }
