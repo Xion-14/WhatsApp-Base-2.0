@@ -97,25 +97,26 @@ function MandarMensaje() { // Al ejecutar la función se situa en la "entrada de
 
     // Popup Contextmenu
     if(edit == 1) { // Controlar edición del 'PopupOptions' con el Modo Edición (ir a EditionMode.js)
-        if(chat_index >= 0) {
-            chatContent.parentElement.parentElement.parentElement.oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
-            chatContent.parentElement.parentElement.parentElement.removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu popup del click derecho en el chat actual
 
-            setTimeout(function() {
-                chatContent.parentElement.parentElement.parentElement.addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
-                
-            }, 500); // Retardo necesario para evitar bugs
-        }
+        chatContent.parentElement.parentElement.parentElement.oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
+        chatContent.parentElement.parentElement.parentElement.removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu popup del click derecho en el chat actual
+
+        setTimeout(function() {
+            chatContent.parentElement.parentElement.parentElement.addEventListener("contextmenu", PopupOptions); // Habilitar menu popup del click derecho en el chat actual
+
+        }, 500); // Retardo necesario para evitar bugs
+
         chatListContainer.addEventListener("contextmenu", PopupOptions2); // Habilitar menu popup del click derecho en el chat actual
         //panelLateral.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu popup del click derecho en el chat actual
         footer.oncontextmenu = function() {return true}
         footer.addEventListener("contextmenu", DeletePopupOptions);
     } else {
-        if(chat_index >= 0) {
-            chatContent.parentElement.parentElement.parentElement.oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
-            chatContent.parentElement.parentElement.parentElement.removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu popup del click derecho en el chat actual
-        }
-            chatListContainer.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu popup del click derecho en el chat actual
+        
+        chatContent.parentElement.parentElement.parentElement.oncontextmenu = function() {return false} // Deshabilitar click derecho en el chat actual
+        chatContent.parentElement.parentElement.parentElement.removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu popup del click derecho en el chat actual
+
+        chatListContainer.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu popup del click derecho en el chat actual
+    
     }
 
 }
