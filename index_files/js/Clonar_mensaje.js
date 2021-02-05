@@ -5,13 +5,12 @@
 
 // var mensajes_chat = document.getElementsByClassName("mensaje");
 
-var chats = document.getElementsByClassName("chat");
 
 function ClonMessage(){
-  var mensaje_clon = chats[chat_index].lastElementChild.cloneNode(true);
-  var mensaje_nuevo = mensaje_clon;
+  let mensaje_clon = chatContent.lastElementChild.cloneNode(true);
+  let mensaje_nuevo = mensaje_clon;
   if(edit == 1) { // Controlar la clonación de mensajes con el Modo Edición (ir a EditionMode.js)
-    chats[chat_index].appendChild(mensaje_nuevo);
+    chatContent.appendChild(mensaje_nuevo);
     location.href='#bottom';
   }
 }

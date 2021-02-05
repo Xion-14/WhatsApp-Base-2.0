@@ -23,7 +23,7 @@ function EditionMode() {
                     if(chat_index >= 0) {
                        chatP[chat_index].removeEventListener("contextmenu", PopupOptions); // Deshabilitar menu del click derecho después de haberlo borrado
                     }
-                        paneSide.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo borrado
+                        panelLateral.removeEventListener("contextmenu", PopupOptions2); // Deshabilitar menu del click derecho después de haberlo borrado
                         span_popup[3].innerHTML = "";
                }, 600);
        }
