@@ -1,47 +1,47 @@
 // Cambiar de color el chat seleccionado al hacer click
 
-var chatGlobal = document.getElementById("Chat");
+var chatContainer = document.getElementById("Chat"); // Contenedor del propio chat
+var chatContent = document.getElementById('Chat Content'); // Contenedor de los mensajes
+
+var chatListContainer = document.getElementById("pane-side"); // Contenedor de la lista de chats
 var lista_de_chats = document.getElementsByClassName("CIL"); // Lista de los paneles de chats
 
 // 'Div' que permite ir al último mensaje de un chat
-var bottom_chat = document.getElementsByClassName("bottom"); // Hay uno en cada chat si le agraga la id 'bottom' al que se encuentra en el chat seleccionado
+var bottom_chat = document.getElementsByClassName("bottom"); // Hay uno en cada chat y se le agrega la id 'bottom' al que se encuentra en el chat seleccionado	
+var chat_index = -1;
 
 
 // Adaptar la posicion de los chats solo moviendolos de posicion en el codigo
-function ChatFit() {PosicionMensaje(); // Detección constante de mensajes para detectar los nuevos. "AccionesPopup.js"
+function ChatListFix() {
 
 	for(var i = 0; i <= lista_de_chats.length - 1; i++) {
 		lista_de_chats[i].style.zIndex = ""+i+"";
 		lista_de_chats[i].style.transform = " translateY("+72*i+"px)";
 		document.getElementsByTagName("div")["Tamaño_del_Chat"].style.height = ""+72*lista_de_chats.length+"px";
-		
-        if(chat_index >= 0) {
-			if(chats_name[chat_index].style.display == "") {
-				// variable declarada en "Seleccionar_chat.js" en la función "CambiarChat(index)"
-				noChat.style.display = "none"; // Corregir el error de la pantalla de 'no chat' al dirigirse al último mensaje
-			} else {noChat.style.display = "";}
-		}
 	}
-}
-setInterval(ChatFit, 200);
 
-
-// Cambiar de Chat al hacer click en uno mediante la comparación del valor del atributo 'class'
-// Añade la id="bottom" unicamente al 'div' del chat selecionado con la clase 'bottom'
-var chats_name = document.getElementsByClassName("_2WG1s");
-if(chat_index >= 0) {
-    bottom_chat[chat_index].setAttribute("id", "bottom");
 }
 
 
-var paneSide = document.getElementById("pane-side"); // Zona de los panles
+// Detección constante de mensajes para detectar los nuevos. "AccionesPopup.js"
+chatContent.addEventListener("DOMNodeInserted", PosicionMensaje);
+chatContent.addEventListener("DOMNodeRemoved", PosicionMensaje);
+
+chatListContainer.addEventListener("DOMSubtreeModified", ChatListFix);
+
+
+
+
 function CambiarChat() {
-	 ColorChat();
-	 ChatSelect();
-	     
-     MandarMensaje(); // Actualizar el popup del contexmenu al cambiar de chat
+	ColorChat();
+	ChatSelect();
+	
+	// Ocultar 'no Chat' (pantalla de bienvenida)
+	noChat.style.display = "none";
+
+    MandarMensaje(); // Actualizar el popup del contexmenu al cambiar de chat
 }
-paneSide.addEventListener("click", CambiarChat);
+chatListContainer.addEventListener("click", CambiarChat);
 
 
 
@@ -67,32 +67,24 @@ function ColorChat() {
 // Selecciona el chat al que se le hace click
 function ChatSelect() {
 
+    // Mostra chat si está oculto
+    if(chatContainer.children[0].style.display == 'none' && chat_index > -1) {
+        chatContainer.children[0].style.display = '';
+    }
+
     var lc = lista_de_chats;
-    for(var i = 0; i < lista_de_chats.length; i++) {
-    
-		 if(chats_name[i] != undefined) {
-			chats_name[i].style.display = "none"; // Ocultar todos los chats al hacer click
-			bottom_chat[i].removeAttribute("id"); // Quitar la id de los 'DIV.bottom'
-		 }
+	for(var i = 0; i < lista_de_chats.length; i++) {
+		lc[i].addEventListener("click", function() {
 
-		 lc[i].addEventListener("click", function() {
+			// Obtiene la Posición del chat seleccionado
+			// 'Array.prototype.indexOf.call()' es lo que define siempre a 'chat_index'
+			chat_index = Array.prototype.indexOf.call(lc, this); // Array.prototype.indexOf.call(collection, element);
 
-			if(Array.prototype.indexOf.call(lc, this) < chats_name.length) { // Controlar que el valor que se le da a 'chat_index' no se sale de la longitud de 'chats_name'
-				// Obtiene la Posición del chat seleccionado
-				// 'Array.prototype.indexOf.call()' es lo que define siempre a 'chat_index'
-			    chat_index = Array.prototype.indexOf.call(lc, this); // Array.prototype.indexOf.call(collection, element);
-			}
-            
-            //console.log(chat_index);
+		//console.log(chat_index);
 
-		 });
+		});
 
-     }
-
-     if(chat_index >= 0) {
-         chats_name[chat_index].style.display = ""; // Mostar el chat seleccionado
-         bottom_chat[chat_index].setAttribute("id", "bottom"); // Agregar la id 'bottom' al 'div' que se encuentra en el chat seleccionado
-     }
+	}
 
 }
 
@@ -103,13 +95,13 @@ function HideChats() {
 	var lc = lista_de_chats;
 	for(var i = 0; i < lista_de_chats.length; i++) {
 		 if(chats_name[i] != undefined) {
-			chats_name[i].style.display = "none"; // Ocultar todos los chats al hacer click
+			chatContainer.children[0].style.display = 'none' // Ocultar el chat al hacer click
 			lc[i].children[0].children[0].classList.remove('_13opk'); // Borrar todas las selecciones de click si las hay
-			bottom_chat[i].removeAttribute("id"); // Quitar la id de los 'DIV.bottom'
 			noChat.style.display = ""; // Mostar pantalla de 'noChat'
 			chat_index = -1; // Reiniciar el valor de 'chat_index' para evitar que al hacer click en un panel de chat sin chat correspondiente se muestre el último mostrado
 		 }
 	}
 }
+
 var perfilP = document.getElementsByClassName("_1MXsz")[0].children[0].children[0];
 perfilP.addEventListener("click", HideChats);
