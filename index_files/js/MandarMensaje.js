@@ -7,7 +7,7 @@ var footerButton = document.getElementsByClassName("footer-button")[0];
 function MandarMensaje() { // Al ejecutar la función se situa en la "entrada de texto" del chat actual para habilitarlo, mandar mensajes se hace con la función "nuevoMensaje"
     
     if(chat_index >= 0) {
-        footer = document.getElementsByTagName('footer')[chat_index];
+        footer = document.getElementsByTagName('footer')[0];
         footerInput = footer.children[0].children[1];
     }
 

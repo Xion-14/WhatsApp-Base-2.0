@@ -173,7 +173,7 @@ function PopupLogic() {
  var divP = document.getElementsByTagName("div");
 
  // Botón que Muestra Mensajes
- var buttonMM = document.getElementsByClassName("MM")[chat_index];
+ var buttonMM = document.getElementsByClassName("MM")[0];
  if(chat_index >= 0) {
      for(var i = 2; i <= chatContent.children.length-1; i++) {
        if(chatContent.children[i].classList.contains("oculto")) {
