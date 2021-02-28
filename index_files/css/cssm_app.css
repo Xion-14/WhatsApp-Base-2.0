@@ -3,6 +3,11 @@
     overflow: hidden;
 }
 
+._2-aNW {
+    /* Hacer que el scroll de los mensajes del chat sea suave */
+    scroll-behavior: smooth;
+}
+
 .cola {}
 
 .oculto {
